@@ -1,0 +1,24 @@
+:root{
+    --background-body: #58190d00;
+    --background-header: #3fd42140;
+    --color-base: #000000a0;
+    --color-primary: #00ff00a0;
+    --color-hover: #00ff00a0;
+    --color-hover-strong: #55ff55c0;
+    --color-contrast: #ffffffa0;
+    --color-success: #00ff00a0;
+    --button-dark: #00ff00a0;
+    --notification--error: #f53f1f;
+    --notification--success: #1f8ef5;
+    --notification--special: #f5e61e;
+}
+
+body{
+    background-image: url(../../images/bliss.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img{
+    filter: invert(0.8);
+}

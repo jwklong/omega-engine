@@ -1,0 +1,98 @@
+:root{
+    --background-body: #000000;
+    --background-header: rgb(10, 10, 10);
+    --color-base: #000000;
+    --color-primary: #26ff00;
+    --color-hover: #181818;
+    --color-hover-strong: #242424;
+    --color-contrast: #ffffff;
+    --color-success: #10b015;
+    --button-dark: #000000;
+    --notification--standard: #0081ff;
+    --notification--success: #04ff00;
+    --notification--error: #ff0909;
+    --notification--special: #ffd700;
+}
+
+@keyframes rainbow-border{
+    0%{
+        border-color: red;
+    }
+    20%{
+        border-color: yellow;
+    }
+    40%{
+        border-color: lime;
+    }
+    60%{
+        border-color: cyan;
+    }
+    80%{
+        border-color: magenta;
+    }
+    100%{
+        border-color: red;
+    }
+}
+
+@keyframes rainbow-color{
+    0%{
+        color: red;
+    }
+    20%{
+        color: yellow;
+    }
+    40%{
+        color: lime;
+    }
+    60%{
+        color: cyan;
+    }
+    80%{
+        color: magenta;
+    }
+    100%{
+        color: red;
+    }
+}
+
+@keyframes rainbow-bg{
+    0%{
+        background-color: #990000;
+    }
+    20%{
+        background-color: #999900;
+    }
+    40%{
+        background-color: #009900;
+    }
+    60%{
+        background-color: #009999;
+    }
+    80%{
+        background-color: #990099;
+    }
+    100%{
+        background-color: #990000;
+    }
+}
+
+p, span, button, td, tr, th, h1, h2, h3, h4, h5, h6, a, div{
+    text-shadow: 0.04em 0.04em 0.075em currentColor, 0.05em 0.05em 0.3em currentColor;
+}
+
+span.omega, a{
+    animation: rainbow-color 45s infinite linear;
+}
+
+button, header, .news-ticker, .guide-item, .guide-item div, textarea, .automator, .settings-panel, input[type=number], input[type=text]{
+    animation: rainbow-border 45s infinite linear;
+}
+
+.challenge.completed{
+    animation: rainbow-bg 15s infinite linear, rainbow-border 15s infinite linear;
+}
+
+img{
+    filter: invert(1) drop-shadow(0.04em 0.04em 0.075em white);
+}

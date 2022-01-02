@@ -1,0 +1,2 @@
+const ADJECTIVES = ["sussy","disguised","venting","confusing","fake","dead","real","dissapearing","living"];
+const NOUNS = ["baka","impostor","crewmate","something","joe mama","sabotage","among us","ghost","dave"]

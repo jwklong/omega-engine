@@ -1,0 +1,18 @@
+:root{
+    --background-body: #000000;
+    --background-header: #ff8800;
+    --color-base: #000000;
+    --color-primary: #ffffff;
+    --color-hover: #dd6600;
+    --color-hover-strong: #ff8800;
+    --color-contrast: #ffffff;
+    --color-success: #ff8800;
+    --button-dark: #0a0a0a;
+    --notification--error: #F5431F;
+    --notification--success: #45f510;
+    --notification--special: #ff8800;
+}
+
+img{
+    filter: invert(0.8);
+}

@@ -1,0 +1,36 @@
+:root{
+    --background-body: #7bff00;
+    --background-header: #9900ff;
+    --color-base: #ffee00;
+    --color-primary: #ff0000;
+    --color-hover: #00ff0d;
+    --color-hover-strong: #0004ff;
+    --color-contrast: #00ffb3;
+    --color-success: #9900ff;
+    --button-dark: #0a0a0a;
+    --notification--error: #F5431F;
+    --notification--success: #38a019;
+    --notification--special: #99861b;
+}
+
+@keyframes colorchange{
+    0%{
+        filter: hue-rotate(72deg);
+    }
+    25%{
+        filter: hue-rotate(144deg);
+    }
+    50%{
+        filter: hue-rotate(216deg);
+    }
+    75%{
+        filter: hue-rotate(288deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+img{
+    animation: colorchange 10s infinite linear;
+}

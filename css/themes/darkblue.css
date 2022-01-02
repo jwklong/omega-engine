@@ -1,0 +1,18 @@
+:root{
+    --background-body: #001858;
+    --background-header: #001f6e;
+    --color-base: #00103a;
+    --color-primary: #0048ff;
+    --color-hover: #4b6492;
+    --color-hover-strong: #4c78e6;
+    --color-contrast: #b6b6b6;
+    --color-success: #0044ff;
+    --button-dark: #000e27;
+    --notification--error: #F5431F;
+    --notification--success: #38a019;
+    --notification--special: #99861b;
+}
+
+img{
+    filter: invert(0.9);
+}

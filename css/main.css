@@ -1,0 +1,882 @@
+@font-face{
+    font-family: monospace-typewriter-font;
+    src: url('../fonts/MonospaceTypewriter.ttf');
+}
+
+:root{
+    --background-body: #000000;
+    --background-header: #ff00ff;
+    --color-base: #ff00ff;
+    --color-primary: #000000;
+    --color-hover: #000000;
+    --color-hover-strong: #ff00ff;
+    --color-contrast: #ffffff;
+    --color-success: #ff00ff;
+    --button-dark: #000000;
+    --notification--standard: var(--notification--success);
+    --notification--standard--border: var(--notification--success--border); 
+    --notification--error: #ff00ff;
+    --notification--error--border: #000000;
+    --notification--success: #ff00ff;
+    --notification--success--border: #000000;
+    --notification--special: #ff00ff;
+    --notification--special--border: #000000;
+    --primary-font: monospace-typewriter-font
+}
+
+@keyframes resource-hue-spin{
+    from{
+        filter: hue-rotate(0deg);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes news-ticker{
+    from{
+        transform: translate(100vw, 0);
+    }
+    to{
+        transform: translate(-100%, 0);
+    }
+}
+
+@keyframes expand{
+    from{
+        transform: scaleY(0);
+        max-height: 0;
+    }
+    to{
+        transform: scaleY(1);
+        max-height: 200px;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    user-select: none;
+    font-variant-numeric: tabular-nums;
+    font-family: var(--primary-font), monospace;
+}
+
+header{
+    background-color: var(--background-header);
+    border-bottom: 1px solid var(--color-primary);
+    padding: 0.9rem 0;
+    padding-bottom: 0;
+}
+
+header nav{
+    width: 100%;
+    padding: 0 0.25rem;
+    padding-bottom: 0.5rem;
+}
+
+header nav div{
+    display: flex;
+    justify-content: left;
+    padding: 0.5rem 2rem;
+}
+
+header nav div:first-child{
+    justify-content: space-between;
+}
+
+header nav button{
+    padding: 0.2em;
+    margin-right: 2rem;
+    font-size: 110%;
+}
+
+header .omega{
+    color: var(--color-primary);
+}
+
+a{
+    color: var(--color-primary);
+}
+
+fieldset{
+    border: none;
+}
+
+main{
+    margin-bottom: 4rem;
+    padding-top: 0.2em;
+}
+
+input[type=number], input[type=text]{
+    background-color: var(--color-base);
+    border: 1px solid var(--color-primary);
+    color: var(--color-contrast);
+    padding: 0.1rem;
+}
+
+input[type=number]:disabled, input[type=text]:disabled{
+    filter: brightness(0.5);
+}
+
+img.inline{
+    display: inline;
+    height: 1em;
+    color: var(--color-contrast);
+    transform: translateY(10%);
+    fill: var(--color-contrast);
+}
+
+.flipped-v{
+    display: inline-block;
+    transform: rotate(180deg) translateY(-0.15em);
+}
+
+#loading{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-body);
+    z-index: 1000;
+    text-align: center;
+    pointer-events: none;
+
+    transition: opacity 400ms;
+}
+
+#loading > * {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+#loading h2{
+    top: 20%;
+    font-size: 10vh;
+    width: 100%;
+}
+
+#loading p{
+    top: 50%;
+    font-size: 3vh;
+}
+
+/*Layer Navigation*/
+
+div.layer-navigation{
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 6rem;
+    white-space: nowrap;
+}
+
+div.layer-navigation button{
+    width: 5rem;
+    height: 5rem;
+    margin: 0;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: relative;
+}
+
+div.layer-navigation button:hover{
+    background-color: var(--color-hover-strong);
+}
+
+div.layer-navigation button .ordinal{
+    position: absolute;
+    right: 0.2rem;
+    bottom: 0.2rem;
+    font-size: 40%;
+    font-weight: normal;
+}
+
+/*Body and Main Styles*/
+
+body{
+    background-color: var(--background-body);
+    color: var(--color-contrast);
+    overflow-x: hidden;
+    touch-action: manipulation;
+}
+
+button{
+    border-radius: 15px;
+    background-color: var(--color-base);
+    color: var(--color-contrast);
+    padding: 2px 4px;
+    border: 2px solid var(--color-primary);
+
+    transition: background-color 500ms, filter 250ms;
+}
+
+button:hover:not(:disabled){
+    background-color: var(--color-hover);
+}
+
+button:active:not(:disabled){
+    filter: brightness(1.25);
+}
+
+button:disabled{
+    filter: brightness(0.7);
+}
+
+button.selected{
+    background-color: var(--color-hover-strong);
+}
+
+table{
+    width: 100%;
+    border-spacing: 0;
+}
+
+table th{
+    border-bottom: 1px solid var(--color-contrast);
+}
+
+table th, table td{
+    padding: 0.5rem 0;
+}
+
+.big-number{
+    font-size: 170%;
+}
+
+/*Prestige Layer*/
+
+.prestige-layer{
+    position: relative;
+}
+
+div.prestige-layer .resource-button{
+    text-align: center;
+    margin: 1rem;
+}
+
+.resource-button button{
+    font-size: 150%;
+}
+
+div.prestige-layer .tabs{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+div.prestige-layer .tabs button{
+    font-size: 130%;
+    margin: 0.5rem;
+}
+
+div.prestige-layer p.power-text{
+    width: 100%;
+    text-align: center;
+}
+
+div.prestige-layer .prestige{
+    position: absolute;
+    left: 2rem;
+    top: 1.5rem;
+    padding: 0.75rem;
+}
+
+div.prestige-layer .respec{
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/*Generator Table*/
+
+table.generator-table td{
+    text-align: center;
+    width: 25%;
+}
+
+table.generator-table td button{
+    width: 80%;
+    font-weight: bold;
+}
+
+/*Resource Display*/
+
+p.resource-display{
+    text-align: center;
+}
+
+p.resource-display > span:first-child{
+    font-size: 170%;
+    font-weight: bold;
+}
+
+/*Upgrade Container*/
+
+.upgrade-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1rem 4rem;
+}
+
+.upgrade{
+    width: 40%;
+    margin: 2%;
+    border-radius: 0.2rem;
+}
+
+.upgrade.maxed{
+    background-color: var(--color-success);
+}
+
+.upgrade.maxed:hover{
+    background-color: var(--color-success);
+    filter: brightness(1.1);
+}
+
+.upgrade .price{
+    font-size: 150%;
+    font-weight: bold;
+    padding: 0.5rem 0;
+}
+
+.upgrade .layer-number{
+    font-size: 85%;
+}
+
+/*Tree Upgrades*/
+
+.upgrade-tree .row{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.upgrade-tree .row .upgrade{
+    width: 30%;
+}
+
+.upgrade-tree .wrapper{
+    width: 30%;
+    margin: 1rem 0;
+}
+
+/*Challenges*/
+
+.challenge{
+    width: 60%;
+    margin: 0.5em 0;
+}
+
+.challenge p{
+    margin: 0.3em 0;
+}
+
+.challenge.completed, .challenge.completed:hover{
+    background-color: var(--color-success);
+}
+
+.challenge-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.current-challenge{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.current-challenge p{
+    margin-bottom: 0.5em;
+}
+
+.upgrade-tree-arrow{
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.upgrade-tree-arrow line{
+    stroke: var(--color-contrast);
+}
+
+/*Statistics*/
+
+.layer-statistics{
+    margin: 1rem;
+    text-align: center;
+}
+
+.layer-statistics p{
+    margin: 0.5rem 0;
+}
+
+/*Volatility*/
+
+.volatility-tab .description{
+    margin: 1rem;
+}
+
+.volatility-tab .upgrades{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*Aleph*/
+
+.aleph{
+    font-weight: bold;
+    text-shadow: 0.07em 0 0.07em currentColor;
+}
+
+.aleph-layer .boosts, .aleph-layer .resource, .aleph-layer .tabs{
+    text-align: center;
+}
+
+.aleph-layer .boosts{
+    margin: 1rem 0;
+}
+
+.aleph-layer .resource{
+    font-size: 120%;
+}
+
+.aleph-layer .resource p:first-child{
+    font-size: 120%;
+}
+
+.aleph-layer .upgrades{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.aleph-layer .upgrades:last-child .upgrade{
+    width: 20%;
+}
+
+.aleph-layer h3{
+    text-align: center;
+}
+
+/*Sabotage*/
+
+.sabotage{
+    font-weight: bold;
+    text-shadow: 0.07em 0 0.07em currentColor;
+}
+
+.sabotage-layer .boosts, .sabotage-layer .resource, .sabotage-layer .tabs{
+    text-align: center;
+}
+
+.sabotage-layer .boosts{
+    margin: 1rem 0;
+}
+
+.sabotage-layer .resource{
+    font-size: 120%;
+}
+
+.sabotage-layer .resource p:first-child{
+    font-size: 120%;
+}
+
+.sabotage-layer .upgrades{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.sabotage-layer .upgrades:last-child .upgrade{
+    width: 20%;
+}
+
+.sabotage-layer h3{
+    text-align: center;
+}
+
+/*Automator*/
+
+.automator-tab{
+    padding: 1rem;
+}
+
+.automator-tab .automators{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.automator {
+    display: flex;
+    width: 45%;
+    border: 1px solid var(--color-primary);
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.automator label{
+    display: block;
+}
+
+.automator label input[type=number]{
+    width: 5em;
+}
+
+/*Hackers*/
+
+.hackers-tab{
+    padding: 1rem;
+}
+
+.hackers-tab .hacker{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.hacker {
+    display: flex;
+    width: 45%;
+    border: 1px solid var(--color-primary);
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.hacker label{
+    display: block;
+}
+
+.hacker label input[type=number]{
+    width: 5em;
+}
+
+/*Restack*/
+
+.restack-tab{
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.restack-tab > p{
+    font-size: 140%;
+}
+
+.restack-tab .upgrades{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.restack-tab .upgrades > button{
+    width: 28%;
+}
+
+.restack-tab .restack{
+    font-size: 225%;
+    width: 100%;
+}
+
+.restack-tab .restack-2{
+    position: absolute;
+    left: 2rem;
+    top: 1rem;
+    font-size: 120%;
+    width: 20%;
+    padding: 1rem 0.2rem;
+}
+
+.restack-tab .respec{
+    margin-top: 1rem;
+    font-size: 120%;
+}
+
+.restack-tab .meta{
+    font-weight: bold;
+    font-size: 225%;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--button-dark);
+
+    box-shadow: 0 0 1rem var(--color-primary) inset;
+}
+
+/*Meta*/
+
+.meta-layer{
+    padding: 1rem;
+    text-align: center;
+}
+
+.meta-layer p.resource{
+    font-size: 150%;
+    min-height: 2em; /*prevent jumping from sub- or superscript*/
+}
+
+.meta-layer p.resource.alpha{
+    font-size: 100%;
+}
+
+.meta-layer p.layer{
+    font-size: 90%;
+}
+
+.meta-layer .max-all{
+    font-size: 120%;
+    margin: 1rem;
+}
+
+.meta-layer h4{
+    margin-top: 1rem;
+}
+
+/*Achievements*/
+
+.achievement-tab p{
+    text-align: center;
+    font-size: 120%;
+}
+
+.achievement-tab .achievements{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4rem;
+    padding-top: 6rem;
+}
+
+.achievement-wrapper{
+    position: relative;
+}
+
+.achievement-wrapper .tooltip{
+    position: absolute;
+    top: -5rem;
+    left: -3rem;
+    width: 12rem;
+    min-height: 5rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #dddddd;
+    font-size: 70%;
+    text-align: center;
+}
+
+.achievement-wrapper .tooltip h4{
+    font-size: 120%;
+}
+
+.achievement{
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+    border: 1px solid var(--color-contrast);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0.5rem;
+}
+
+.achievement img{
+    height: 4rem;
+}
+
+.achievement.completed{
+    background-color: var(--color-success);
+}
+
+/*Settings*/
+
+.settings .settings-panel-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0.2rem 1rem;
+}
+
+.settings .settings-panel{
+    width: 25%;
+    min-width: 425px;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid var(--color-primary);
+}
+
+.settings .settings-panel label{
+    margin: 0.5rem 0;
+}
+
+.settings .settings-row{
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+}
+
+.settings .settings-row button{
+    margin: 0.5em;
+}
+
+.settings .settings-row label{
+    margin: 0 1rem;
+}
+
+.settings textarea.export{
+    width: 80%;
+    height: 20em;
+    background-color: var(--background-body);
+    border: 1px solid var(--color-primary);
+    color: var(--color-contrast);
+}
+
+.settings textarea{
+    resize: none;
+    user-select: all;
+}
+
+.settings .credits{
+    padding: 1rem;
+    text-align: center;
+}
+
+/*News Ticker*/
+
+.news-ticker{
+    margin: 0.5rem 1rem;
+    border: 1px solid var(--color-primary);
+    clip: auto;
+    overflow: hidden;
+}
+
+.news-ticker span{
+    display: inline-block;
+    white-space: nowrap;
+    animation: news-ticker linear infinite;
+}
+
+/*Notifications*/
+
+.notification{
+    transform-origin: top;
+    width: 20em;
+    background-color: var(--notification--standard);
+    border: 2px solid var(--notification--standard--border);
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+    animation-fill-mode: forwards;
+}
+
+.notification.error{
+    background-color: var(--notification--error);
+    border-color: var(--notification--error--border);
+}
+
+.notification.success{
+    background-color: var(--notification--success);
+    border-color: var(--notification--success--border);
+}
+
+.notification.special{
+    background-color: var(--notification--special);
+    border-color: var(--notification--special--border);
+}
+
+.notification-container{
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    height: 100vh;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/*Guide*/
+
+.guide-tab{
+    padding: 1rem;
+}
+
+.guide-tab > *{
+    padding: 0.25rem;
+}
+
+.guide-item{
+    border: 1px solid var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.guide-item .header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-primary);
+    padding-left: 0.25rem;
+}
+
+.guide-item .body{
+    padding: 0.25rem;
+    transform-origin: top;
+}
+
+.guide-item h2{
+    font-size: 1.4rem;
+}
+
+.guide-item span{
+    font-size: 1.4rem;
+}
+
+.changelog-tab{
+    padding: 1rem;
+}
+
+.changelog-tab > *{
+    padding: 0.25rem;
+}
+
+/*Footer*/
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+footer div{
+    display: flex;
+    justify-content: center;
+}
+
+footer div a{
+    margin: 0 1rem;
+    pointer-events: auto;
+}
+
+footer p{
+    font-size: 75%;
+}
+
+.expandable-enter-active{
+    animation: expand 250ms !important;
+}
+
+.expandable-leave-active{
+    animation: expand 250ms reverse !important;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>&#3486;-l&lambda;&gamma;ers</title>
+    <link rel="icon" href="favicon.png"/>
+
+    <meta name="keywords" content="sussy"/>
+    <meta name="description" content="when the layers are demo 😳😳😳"/>
+    <meta name="image" content="cover.png"/>
+    <meta name="theme-color" content="#F5431F"/>
+
+    <meta name="og:title" content="sussy layers"/>
+    <meta name="og:type" content="website"/>
+    <meta name="og:description" content="when the layers are demo 😳😳😳"/>
+    <meta name="og:image" content="cover.png"/>
+
+    <link rel="stylesheet" href="css/main.css"/>
+    <link id="theme" rel="stylesheet" href="css/themes/sussy.css"/>
+</head>
+<body>
+<div id="loading">
+    <h2><span class="omega">&#3486;</span> - l &lambda; &gamma; e r s</h2>
+    <p>waiting for the existance</p>
+</div>
+<div id="app">
+    <header>
+        <nav>
+            <div>
+                <h2><span class="omega">ω</span>Engine</h2>
+                <button @click="settings.tab = 'Layers'"><img alt="L" class="inline" src="images/layers.png"/> Layers</button>
+                <button @click="settings.tab = 'Achievements'"><img alt="A" class="inline" src="images/star.svg"/> Achievements</button>
+                <button @click="settings.tab = 'Guide'"><img alt="G" class="inline" src="images/information-circle.svg"/> Guide</button>
+                <button @click="settings.tab = 'Changelog'"><img alt="C" class="inline" src="favicon.png"> Changelog</button>
+                <button @click="settings.tab = 'Settings'"><img alt="S" class="inline" src="images/settings.svg"/> Settings</button>
+            </div>
+            <div>
+                <layer-locked-button v-if="!isMeta" @click="settings.tab = 'Automators'" :layerid="1"><img alt="Au" class="inline" src="images/hardware-chip.svg"/> Automators</layer-locked-button>
+                <layer-locked-button v-if="!isMeta" @click="settings.tab = 'Volatility'" :layerid="2"><img alt="V" class="inline" src="images/save.svg"/> Volatility</layer-locked-button>
+                <layer-locked-button v-if="!isMeta" @click="settings.tab = 'Aleph'" :layerid="3"><img alt="T" class="inline" src="favicon.png"> Tasks</layer-locked-button>
+                <layer-locked-button @click="settings.tab = 'ReStack'" :layerid="9"><img alt="R" class="inline" src="images/layercoin.png"/> ReStack</layer-locked-button>
+            </div>
+        </nav>
+        <news-ticker v-if="settings.newsTicker"></news-ticker>
+        <layer-navigation v-if="settings.tab === 'Layers' && !isMeta" :layers="layers"></layer-navigation>
+    </header>
+    <main>
+        <notification-container :notifications="notifications"></notification-container>
+        <div v-if="settings.tab === 'Layers'">
+            <prestige-layer v-if="!isMeta" :layer="currentLayer"></prestige-layer>
+            <meta-layer v-else></meta-layer>
+        </div>
+        <settings-menu v-if="settings.tab === 'Settings'"></settings-menu>
+        <volatility-tab v-if="settings.tab === 'Volatility'"></volatility-tab>
+        <achievement-tab v-if="settings.tab === 'Achievements'"></achievement-tab>
+        <aleph-layer v-if="settings.tab === 'Aleph'"></aleph-layer>
+        <sabotage-layer v-if="settings.tab === 'Sabotage'"></sabotage-layer>
+        <restack-tab v-if="settings.tab === 'ReStack'"></restack-tab>
+        <guide-tab v-if="settings.tab === 'Guide'"></guide-tab>
+        <changelog-tab v-if="settings.tab === 'Changelog'"></changelog-tab>
+    </main>
+    <footer>
+        <div>
+            <a href="https://veprogames.github.io/omega-layers" target="_blank">Original Game</a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Website</a>
+        </div>
+    </footer>
+</div>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.flat"></script>
+
+<script src="js/break_eternity.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@antimatter-dimensions/notations@1.6.0"></script>
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- production version, optimized for size and speed -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+
+<script>
+    const INFINITY = new Decimal("1.8e308");
+    const INFINITY2 = new Decimal("1.8e30800");
+    const INFINITY3 = new Decimal("1.8e308000000");
+    var LETTERS = "αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ";
+    var ORDERS = "ψϝϛͱϻϙͳϸ";
+    var GIANTS = ["<span class='flipped-v'>Ω</span>", "<span class='flipped-v'>Ω</span><sup>2</sup>","<span class='flipped-v'>Ω</span><sup>3</sup>"]
+</script>
+
+<script src="js/vocabulary.js"></script>
+<script src="js/classes/random.js"></script>
+<script src="js/classes/utils.js"></script>
+<script src="js/classes/featureunlockmanager.js"></script>
+
+<script src="js/classes/generator.js"></script>
+<script src="js/classes/powergenerator.js"></script>
+<script src="js/classes/upgrade.js"></script>
+<script src="js/classes/challenge.js"></script>
+<script src="js/classes/prestigelayer.js"></script>
+<script src="js/classes/alephlayer.js"></script>
+<script src="js/classes/achievement.js"></script>
+<script src="js/classes/automator.js"></script>
+<script src="js/classes/restacklayer.js"></script>
+<script src="js/classes/metalayer.js"></script>
+<script src="js/classes/notification.js"></script>
+
+<script src="js/components/layer-colored-text.js"></script>
+<script src="js/components/layer-locked-button.js"></script>
+<script src="js/components/generator.js"></script>
+<script src="js/components/generator-table.js"></script>
+<script src="js/components/resource-name.js"></script>
+<script src="js/components/resource-display.js"></script>
+<script src="js/components/upgrade.js"></script>
+<script src="js/components/resource-upgrade.js"></script>
+<script src="js/components/aleph-upgrade.js"></script>
+<script src="js/components/restack-upgrade.js"></script>
+<script src="js/components/dynamic-upgrade.js"></script>
+<script src="js/components/upgrade-container.js"></script>
+<script src="js/components/upgrade-tree.js"></script>
+<script src="js/components/upgrade-tree-arrow.js"></script>
+<script src="js/components/challenge.js"></script>
+<script src="js/components/challenge-table.js"></script>
+<script src="js/components/current-challenge.js"></script>
+<script src="js/components/layer-statistics.js"></script>
+<script src="js/components/prestige-layer.js"></script>
+<script src="js/components/layer-navigation.js"></script>
+<script src="js/components/settings-menu.js"></script>
+<script src="js/components/volatility-tab.js"></script>
+<script src="js/components/aleph-layer.js"></script>
+<script src="js/components/automator.js"></script>
+<script src="js/components/automator-tab.js"></script>
+<script src="js/components/restack-tab.js"></script>
+<script src="js/components/meta-layer.js"></script>
+<script src="js/components/news-ticker.js"></script>
+<script src="js/components/achievement.js"></script>
+<script src="js/components/achievement-tab.js"></script>
+<script src="js/components/notification.js"></script>
+<script src="js/components/notification-container.js"></script>
+<script src="js/components/guide-item.js"></script>
+<script src="js/components/guide-tab.js"></script>
+<script src="js/components/changelog-tab.js"></script>
+
+<script src="js/data/functions.js"></script>
+<script src="js/data/computed.js"></script>
+<script src="js/data/game.js"></script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

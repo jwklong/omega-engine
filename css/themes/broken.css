@@ -1,0 +1,38 @@
+:root{
+    --background-body: #00aa00;
+    --background-header: #008800;
+    --color-base: #007700;
+    --color-primary: #FBDBD6;
+    --color-hover: #00bb00;
+    --color-hover-strong: #00cc00;
+    --button-dark: #004c00;
+    --color-contrast: #FBDBD6;
+    --color-success: #707070;
+}
+
+@keyframes rotating{
+    0%{
+        transform: rotate(0deg);
+    }
+    33%{
+        transform: rotate(270deg);
+    }
+    67%{
+        transform: rotate(90deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+body{
+    font-family: "Lucida Console", "Typewriter", sans-serif;
+}
+
+* {
+    animation: rotating 45s infinite linear;
+}
+
+img{
+    filter: invert(0.8);
+}
