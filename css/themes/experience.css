@@ -18,7 +18,3 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-img{
-    filter: invert(0.8);
-}

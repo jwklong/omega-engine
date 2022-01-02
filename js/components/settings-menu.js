@@ -5,8 +5,8 @@ Vue.component("settings-menu", {
             settings: game.settings,
             exportString: "The exported Save String will appear here. Keep it somewhere safe." +
                 " Click Import to load the save string from the text field.",
-            themes: [["Dark", "dark.css"], ["Neon", "neon.css"], ["Godot Blue", "darkblue.css"], ["eXPerience", "experience.css"], ["Halloween", "spooky.css"]],
-            names: [["Ω-Lλγers", ["αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ", "ψϝϛͱϻϙͳϸ", ["<span class='flipped-v'>Ω</span>", "<span class='flipped-v'>Ω</span><sup>2</sup>","<span class='flipped-v'>Ω</span><sup>3</sup>"]]], ["Alphabet", ["abcdefghijklmnopqrstuvwxyz", "123456789", ["A","B","C"]]], ["Symbols", ['!"£$%^&*;:@', "<,[{}].>", ["+","×","÷"]]], ["Binary", ['01', "01", ["2","3","4"]]]]
+            themes: [["Dark", "dark.css"], ["Neon", "neon.css"], ["Godot Blue", "darkblue.css"], ["Halloween", "spooky.css"], ["eXPerience", "experience.css"]],
+            names: [["Ω-Lλγers", ["αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ", "ψϝϛͱϻϙͳϸ", ["<span class='flipped-v'>Ω</span>", "<span class='flipped-v'>Ω</span><sup>2</sup>","<span class='flipped-v'>Ω</span><sup>3</sup>"]]], ["Alphabet", ["abcdefghijklmnopqrstuvwxyz", "123456789", ["A","B","C"]]], ["Symbols", ['!"£$%^&*;:@', "<,[{}].>", ["+","×","÷"]]], ["Binary", ['01', "01", ["2","3","4"]]], ["Refresh Names", "refresh"]]
         }
     },
     mounted: function()
@@ -135,7 +135,7 @@ Vue.component("settings-menu", {
 <div class="settings-row">
     <label>Theme <button :class="{selected: settings.theme === t[1]}" v-for="t in themes" @click="setTheme(t[1])">{{t[0]}}</button></label>
 </div><div class="settings-row">
-    <label>Layer Names <button :class="{selected: settings.layerNames === t[1]}" v-for="t in names" @click="setNames(t[1])">{{t[0]}}</button></label><label><a href="index.html">Refresh Names</a></label>
+    <label>Layer Names <button :class="{selected: settings.layerNames === t[1]}" v-for="t in names" @click="setNames(t[1])">{{t[0]}}</button></label>
 </div>
 <div class="settings-row">
     <button @click="save()">Save Game</button>
@@ -173,7 +173,7 @@ Vue.component("settings-menu", {
     <p>Inspiration: Antimatter Dimensions by hevipelle, Infinite Layers by dan-simon</p>
     <p>Original Game (Omega Layers) created by VeproGames</p>
     <p>Powered by vue.js and break_eternity.min.js</p>
-    <p>&#3486;-l&lambda;&gamma;ers v1.1.0 demo 1.9 P4</p>
+    <p>` + mod.primaryName + mod.secondaryName + ` v` + mod.version +`</p>
 </div>
 </div>`
 })

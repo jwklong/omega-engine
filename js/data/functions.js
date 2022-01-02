@@ -94,6 +94,10 @@ const functions = {
     },
     setNames: function(stuff)
     {
+        if (stuff === "refresh") {
+            window.location.reload();
+            return
+        }
         game.settings.layerNames = stuff;
         [LETTERS, ORDERS, GIANTS] = stuff;
     },

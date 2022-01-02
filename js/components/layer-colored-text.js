@@ -22,7 +22,7 @@ Vue.component("layer-colored-text", {
             {
                 h += Decimal.log10(lid.div(10000)).toNumber() * 600;
             }
-            return "hsl(" + h + ", " + s + ", 60%)";
+            return "hsl(" + h + ", " + s + "%, 50%)";
         },
         textGlow: function()
         {

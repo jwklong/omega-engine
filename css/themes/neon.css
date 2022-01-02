@@ -94,5 +94,5 @@ button, header, .news-ticker, .guide-item, .guide-item div, textarea, .automator
 }
 
 img{
-    filter: invert(1) drop-shadow(0.04em 0.04em 0.075em white);
+    filter: drop-shadow(0.04em 0.04em 0.075em white);
 }

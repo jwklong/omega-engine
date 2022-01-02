@@ -12,7 +12,3 @@
     --notification--success: #45f510;
     --notification--special: #ff8800;
 }
-
-img{
-    filter: invert(0.8);
-}
