@@ -3,21 +3,16 @@ Vue.component("news-ticker", {
     {
         return {
             messages: [
-                "sussy game o_O",
-                "when the impostor is sus",
-                "&#3486;",
-                "<a href='https://jwklong.github.io/Incremental-Snake'>play incremental snake</a>",
-                "motd: "+Utils.getMOTD(),
-                "guys i just realised that when u get layer 1.8e308 in meta there is sabotage thing that allows you to do cool stuff and btw thank you for listening to my spoiler now you know it :D",
-                "hamburger",
-                "what if the how is why where there",
-                "monke",
-                Utils.createRandomWord(250) + " sorry my cat stepped on my keyboard",
-                "ERROR: " + Utils.createRandomWord(8) + " does not exist",
-                "XD u just got                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 really slow text that lasts forever",
-                "h m m m m m m m m m m m m m m m m m",
-                "idk man, you look kinda sus",
-                "i am S P E E D"
+                "modding.net",
+                "layer name moment",
+                "weird themes",
+                "hey, you could make a mod out of this",
+                "when the imp- oh wrong mod",
+                "basically there is a thi- (softcapped)",
+                "incremental thing i guess",
+                "omega layers but steam engine",
+                "mod.js: powering layers",
+                "i ran out of words on my hard drive :("
             ],
             currentMessage: "",
             messageIndex: -1
@@ -26,7 +21,7 @@ Vue.component("news-ticker", {
     computed: {
         animationDuration: function()
         {
-            return this.currentMessage !== "i am S P E E D" ? 10 + 0.1 * this.currentMessage.replace(/<.*?>/g, "").length : 3;
+            return 10 + 0.1 * this.currentMessage.replace(/<.*?>/g, "").length;
         }
     },
     methods: {

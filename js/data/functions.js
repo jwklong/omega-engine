@@ -89,7 +89,7 @@ const functions = {
     },
     setTheme: function(css)
     {
-        document.getElementById("theme").href = "css/themes/" + css;
+        document.getElementById("theme").href = css;
         game.settings.theme = css;
     },
     setNames: function(stuff)
@@ -169,8 +169,8 @@ const functions = {
         game.timeSaved = Date.now();
         try
         {
-            localStorage.setItem("SussyLayers", this.getSaveString());
-            localStorage.setItem("SussyLayers_Settings", this.getSettingsSaveString());
+            localStorage.setItem(mod.primaryName+mod.secondaryName, this.getSaveString());
+            localStorage.setItem(mod.primaryName+mod.secondaryName+"_Settings", this.getSettingsSaveString());
             if(game.settings.notifications && game.settings.saveNotifications)
             {
                 functions.createNotification(new Notification(NOTIFICATION_STANDARD, "Game Saved!", "images/save.svg"));
@@ -188,7 +188,7 @@ const functions = {
     {
         let loadObj;
         const isImported = typeof(str) !== "undefined";
-        str = str || localStorage.getItem("SussyLayers") || null;
+        str = str || localStorage.getItem(mod.primaryName+mod.secondaryName) || null;
         if(str === null) return;
         if(str === "among us")
         {
@@ -285,11 +285,11 @@ const functions = {
             game.metaLayer = new MetaLayer();
         }
 
-        if(localStorage.getItem("SussyLayers_Settings") !== null)
+        if(localStorage.getItem(mod.primaryName+mod.secondaryName+"_Settings") !== null)
         {
             try
             {
-                const settings = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem("SussyLayers_Settings")))));
+                const settings = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(mod.primaryName+mod.secondaryName+"_Settings")))));
                 game.settings = Object.assign(game.settings, settings);
             }
             catch(e)
@@ -332,15 +332,15 @@ const functions = {
         let confirmations = 0;
         do
         {
-            if(!confirm("Are you " + "sus ".repeat(confirmations) + "sure? There is no kill. " +
-                "Click " + (3 - confirmations) + " more " + (confirmations >= 2 ? "time" : "times") + " to die."))
+            if(!confirm("Are you " + "really ".repeat(confirmations) + "sure? There is no way back. " +
+                "Click " + (3 - confirmations) + " more " + (confirmations >= 2 ? "time" : "times") + " to restart."))
             {
                 return;
             }
             confirmations++;
         } while(confirmations < 3)
 
-        localStorage.setItem("SussyLayers", null);
+        localStorage.setItem(mod.primaryName+mod.secondaryName, null);
         game.currentLayer = null;
         game.layers = [];
         functions.generateLayer(0);

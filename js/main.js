@@ -76,10 +76,6 @@ function tickGame(seconds)
         {
             game.alephLayer.maxAll();
         }
-        if(game.settings.tab === "Sabotage")
-        {
-            game.sabotageLayer.maxAll();
-        }
         else
         {
             game.currentLayer.maxAll();
@@ -236,10 +232,6 @@ onkeydown = e =>
         if(lc === "u" && !e.ctrlKey && game.highestLayer >= 1)
         {
             game.settings.tab = "Automators";
-        }
-        if(lc === "b" && !e.ctrlKey && game.highestLayer >= INFINITY)
-        {
-            game.settings.tab = "Sabotage";
         }
     }
     else

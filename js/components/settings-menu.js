@@ -5,8 +5,8 @@ Vue.component("settings-menu", {
             settings: game.settings,
             exportString: "The exported Save String will appear here. Keep it somewhere safe." +
                 " Click Import to load the save string from the text field.",
-            themes: [["Dark", "dark.css"], ["Neon", "neon.css"], ["Godot Blue", "darkblue.css"], ["Halloween", "spooky.css"], ["eXPerience", "experience.css"]],
-            names: [["Ω-Lλγers", ["αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ", "ψϝϛͱϻϙͳϸ", ["<span class='flipped-v'>Ω</span>", "<span class='flipped-v'>Ω</span><sup>2</sup>","<span class='flipped-v'>Ω</span><sup>3</sup>"]]], ["Alphabet", ["abcdefghijklmnopqrstuvwxyz", "123456789", ["A","B","C"]]], ["Symbols", ['!"£$%^&*;:@', "<,[{}].>", ["+","×","÷"]]], ["Binary", ['01', "01", ["2","3","4"]]], ["Refresh Names", "refresh"]]
+            themes: mod.themes,
+            names: mod.layerNames
         }
     },
     mounted: function()

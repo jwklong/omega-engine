@@ -3,8 +3,4 @@ const computed = {
     {
         return game.metaLayer.active;
     },
-    canHack: function()
-    {
-        return game.restackLayer.upgradeTreeNames.unlockHackers.apply();
-    }
 };

@@ -469,43 +469,6 @@ p.resource-display > span:first-child{
     text-align: center;
 }
 
-/*Sabotage*/
-
-.sabotage{
-    font-weight: bold;
-    text-shadow: 0.07em 0 0.07em currentColor;
-}
-
-.sabotage-layer .boosts, .sabotage-layer .resource, .sabotage-layer .tabs{
-    text-align: center;
-}
-
-.sabotage-layer .boosts{
-    margin: 1rem 0;
-}
-
-.sabotage-layer .resource{
-    font-size: 120%;
-}
-
-.sabotage-layer .resource p:first-child{
-    font-size: 120%;
-}
-
-.sabotage-layer .upgrades{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.sabotage-layer .upgrades:last-child .upgrade{
-    width: 20%;
-}
-
-.sabotage-layer h3{
-    text-align: center;
-}
-
 /*Automator*/
 
 .automator-tab{
@@ -531,34 +494,6 @@ p.resource-display > span:first-child{
 }
 
 .automator label input[type=number]{
-    width: 5em;
-}
-
-/*Hackers*/
-
-.hackers-tab{
-    padding: 1rem;
-}
-
-.hackers-tab .hacker{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.hacker {
-    display: flex;
-    width: 45%;
-    border: 1px solid var(--color-primary);
-    padding: 0.5rem;
-    margin: 1rem;
-}
-
-.hacker label{
-    display: block;
-}
-
-.hacker label input[type=number]{
     width: 5em;
 }
 

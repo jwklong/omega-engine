@@ -1,7 +1,7 @@
 const UPGRADE_RESOURCE = 0, UPGRADE_GENERATOR = 1, UPGRADE_GENMULTI = 2, UPGRADE_POWERGENERATOR = 3, UPGRADE_PRESTIGEREWARD = 4,
     UPGRADE_RESOURCE_TIMELAYER = 5, UPGRADE_GENERATOR_TIMELAYER = 6, UPGRADE_POWERGENERATOR_TIMELAYER = 7;
 
-const RESOURCE_ALEPH = 0, RESOURCE_LAYERCOINS = 1, RESOURCE_SABOTAGE = 2;
+const RESOURCE_ALEPH = 0, RESOURCE_LAYERCOINS = 1
 
 class AbstractUpgrade
 {
@@ -254,40 +254,6 @@ class DynamicLayerUpgrade extends LayerUpgrade
     }
 }
 
-class DynamicSabotageUpgrade extends LayerUpgrade
-{
-    constructor(getCost, getDescription, getPrice, getEffect, cfg)
-    {
-        super(null, null, getPrice, getEffect, null, cfg);
-        this.getCost = getCost;
-        this.description = getDescription(this);
-    }
-    buy()
-    {
-        if(!this.isBuyable()) return;
-        if(game.sabotageLayer.sabotagePoints.gte(this.getPrice))
-        {
-            game.sabotageLayer.sabotagePoints = game.sabotageLayer.sabotagePoints.sub(this.getPrice);
-            this.level = this.level.add(1);
-        }
-    }
-
-    buyMax()
-    {
-        if(!this.isBuyable()) return;
-        const oldLvl = new Decimal(this.level);
-        this.level = new Decimal(Utils.determineMaxLevel(this.currentCostLayer().resource, this));
-        if(this.level.sub(oldLvl).gt(0) && this.level.lt(1e9))
-        {
-            this.currentCostLayer().resource = this.currentCostLayer().resource.sub(this.getPrice(this.level.sub(1)));
-        }
-        while(this.currentPrice().lte(this.currentCostLayer().resource) && this.level.lt(1e9) && this.level.lt(this.maxLevel))
-        {
-            this.buy();
-        }
-    }
-}
-
 class ResourceUpgrade extends AbstractUpgrade
 {
     constructor(description, getPrice, getEffect, resource, cfg)
@@ -303,8 +269,6 @@ class ResourceUpgrade extends AbstractUpgrade
         {
             case RESOURCE_ALEPH:
                 return game.alephLayer.aleph;
-            case RESOURCE_SABOTAGE:
-                return game.sabotageLayer.sabotagePoints;
             case RESOURCE_LAYERCOINS:
                 return game.restackLayer.layerCoins;
         }
@@ -314,9 +278,6 @@ class ResourceUpgrade extends AbstractUpgrade
     {
         switch(this.resource)
         {
-            case RESOURCE_SABOTAGE:
-                game.sabotageLayer.sabotagePoints = game.sabotageLayer.sabotagePoints.sub(res);
-                break;
             case RESOURCE_ALEPH:
                 game.alephLayer.aleph = game.alephLayer.aleph.sub(res);
                 break;
@@ -349,14 +310,6 @@ class ResourceUpgrade extends AbstractUpgrade
         {
             this.buy();
         }
-    }
-}
-
-class sabotageUpgrade extends ResourceUpgrade
-{
-    constructor(description, getPrice, getEffect, cfg)
-    {
-        super(description, getPrice, getEffect, RESOURCE_SABOTAGE, cfg);
     }
 }
 
