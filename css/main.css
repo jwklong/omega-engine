@@ -1,6 +1,6 @@
 @font-face{
-    font-family: monospace-typewriter-font;
-    src: url('../fonts/MonospaceTypewriter.ttf');
+    font-family: typespace;
+    src: url('../fonts/typespace.ttf');
 }
 
 :root{
@@ -21,7 +21,7 @@
     --notification--success--border: #000000;
     --notification--special: #ff00ff;
     --notification--special--border: #000000;
-    --primary-font: monospace-typewriter-font
+    --primary-font: typespace
 }
 
 @keyframes resource-hue-spin{

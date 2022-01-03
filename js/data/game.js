@@ -107,8 +107,9 @@ const game = {
         confirmations: true,
         offlineProgress: true,
         titleStyle: 2,
-        theme: "sussy.css",
+        theme: "css/themes/dark.css",
         layerNames: ["αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ", "ψϝϛͱϻϙͳϸ", ["<span class='flipped-v'>Ω</span>", "<span class='flipped-v'>Ω</span><sup>2</sup>","<span class='flipped-v'>Ω</span><sup>3</sup>"]],
+        font: "css/fonts/typespace.css"
     },
 };
 const initialGame = functions.getSaveString();

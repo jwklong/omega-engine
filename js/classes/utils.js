@@ -53,7 +53,7 @@ class Utils
         return gen;
     }
 
-    static createValueDilation(value, strength, start = INFINITY)
+    static createValueDilation(value, strength, start = Infinities[0])
     {
         return value.pow(Decimal.max(0, value.div(start).log10().mul(strength)).add(1));
     }

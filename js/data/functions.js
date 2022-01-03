@@ -92,6 +92,11 @@ const functions = {
         document.getElementById("theme").href = css;
         game.settings.theme = css;
     },
+    setFont: function(css)
+    {
+        document.getElementById("font").href = css;
+        game.settings.font = css;
+    },
     setNames: function(stuff)
     {
         if (stuff === "refresh") {
@@ -190,7 +195,7 @@ const functions = {
         const isImported = typeof(str) !== "undefined";
         str = str || localStorage.getItem(mod.primaryName+mod.secondaryName) || null;
         if(str === null) return;
-        if(str === "among us")
+        if(str === "?")
         {
             functions.setTheme("broken.css");
             return -1;
@@ -299,6 +304,7 @@ const functions = {
         }
         this.setTheme(game.settings.theme)
         this.setNames(game.settings.layerNames)
+        this.setFont(game.settings.font)
 
         if(game.version !== loadObj.version)
         {
@@ -361,15 +367,15 @@ const functions = {
     textColor: function(layer)
     {
         const lid = new Decimal(layer);
-        if(lid.gte(INFINITY3))
+        if(lid.gte(Infinities[2]))
         {
             return "#ff9100";
         }
-        if(lid.gte(INFINITY2))
+        if(lid.gte(Infinities[1]))
         {
             return "#00ffb7";
         }
-        if(lid.gte(INFINITY))
+        if(lid.gte(Infinities[0]))
         {
             return "#ff00ff";
         }

@@ -39,16 +39,16 @@ function tickGame(seconds)
     switch(game.settings.titleStyle)
     {
         case 0:
-            titleInfo = "";
             break;
         case 1:
             titleInfo = Utils.getMOTD();
             break;
         case 2:
-            titleInfo = game.metaLayer.active ? "layer " + functions.formatNumber(game.metaLayer.layer.add(1), 3, 0) : "layer " + new Decimal(1).add(game.highestLayer);
+            titleInfo = "Layer "
+            titleInfo += game.metaLayer.active ? functions.formatNumber(game.metaLayer.layer.add(1), 3, 0) : new Decimal(1).add(game.highestLayer);
             break;
     }
-    document.title = "ඞ-lλγers" + (game.settings.titleStyle !== 0 ? ":" : "") + " " + titleInfo;
+    document.title = "ωEngine" + (game.settings.titleStyle !== 0 ? ":" : "") + " " + titleInfo;
 
     if(saveTimer > 30)
     {
