@@ -11,7 +11,7 @@ class AlephLayer
                 level => new Decimal(1).add(level.mul(0.1)).mul(Decimal.pow(1.05, Decimal.max(level.sub(10), 0))), {
                     getEffectDisplay: effectDisplayTemplates.percentStandard(3, "", " %", 0)
                 }),
-            alephBoost: new AlephUpgrade("Gain more tasks based on the log(tasks) you have",
+            alephBoost: new AlephUpgrade("Gain more aleph based on the log(ℵ) you have",
                 level => new Decimal(1e6).pow(Decimal.pow(1.5, level)),
                 level => new Decimal(1).add(Decimal.max(0, game.alephLayer.aleph).add(1).log10().mul(level).mul(0.05)).pow(2.5)),
             deltaBoost: new AlephUpgrade("Gain more 🗡",
@@ -27,7 +27,7 @@ class AlephLayer
                 level => Decimal.pow(2, level), {
                     maxLevel: 3
                 }),
-            alephBoost2: new AlephUpgrade("Gain more tasks based on the log(log(○)) you have",
+            alephBoost2: new AlephUpgrade("Gain more aleph based on the log(log(&alpha;)) you have",
                 level => Utils.createValueDilation(Decimal.pow(1e30, level).mul(1e100), 0.01),
                 level => game.layers[0] ? Decimal.pow(new Decimal(1.1).add(level.mul(0.1)), Decimal.max(0, game.layers[0].resource).add(1).log10().add(1).log10()) : new Decimal(1)),
             betterBetaFormula: new AlephUpgrade("The ☛ Prestige Formula is better",

@@ -1,7 +1,7 @@
 var mod = {
     primaryName: "ω",
     secondaryName: "Engine",
-    version: "0.0.2",
+    version: "0.0.2 P1",
     themes: [
         ["Dark", "css/themes/dark.css"],
         ["Light", "https://veprogames.github.io/omega-layers/css/main.css"],

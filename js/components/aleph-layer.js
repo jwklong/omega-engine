@@ -21,15 +21,15 @@ Vue.component("aleph-layer", {
     },
     template: `<div class="aleph-layer">
 <div class="resource">
-    <p>You have {{formatNumber(aleph.aleph, 2, 2, 1e9)}} <span class="aleph">tasks</span></p>
-    <p>You get {{formatNumber(aleph.getAlephGain(), 2, 2, 1e9)}} <span class="aleph">tasks</span> every second</p>
+    <p>You have {{formatNumber(aleph.aleph, 2, 2, 1e9)}} <span class="aleph">ℵ</span></p>
+    <p>You get {{formatNumber(aleph.getAlephGain(), 2, 2, 1e9)}} <span class="aleph">ℵ</span> every second</p>
 </div>
 <div class="boosts">
     <div v-if="canProduceAleph">
-        <p>Your highest Layer is <resource-name :layerid="highestLayer()"></resource-name>, translated to a x{{formatNumber(aleph.getAlephBoostFromLayer(), 2, 2)}} Boost on <span class="aleph">task</span> speed</p>
+        <p>Your highest Layer is <resource-name :layerid="highestLayer()"></resource-name>, translated to a x{{formatNumber(aleph.getAlephBoostFromLayer(), 2, 2)}} Boost on <span class="aleph">ℵ</span> gain</p>
     </div>
     <div v-else>
-        <p>You need to go <resource-name :layerid="3"></resource-name> at least once to get <span class="aleph">tasks</span></p>
+        <p>You need to go <resource-name :layerid="3"></resource-name> at least once to get <span class="aleph">ℵ</span></p>
     </div>
 </div>
 <div class="tabs">
