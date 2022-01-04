@@ -1,5 +1,5 @@
 const game = {
-    version: "1.0",
+    version: "1.1",
     timeSaved: Date.now(),
     layers: [],
     highestLayer: 0,
@@ -79,7 +79,10 @@ const game = {
             }),
     },
     achievements: [
-        new Achievement("Coming soon", "in a later update", mod.primaryName, () => true),
+        new Achievement("You played!", "If you dont have this, you shouldn't exist", "&omega;", () => true),
+        new Achievement("Stacking up", "Do a restack and restart your progress", "&kappa;", () => game.restackLayer.timesReset > 0),
+        new Achievement("No turning back", "Go meta and be reborn", "&Omega;", () => game.metaLayer.active),
+        new Achievement("Endgame", "Reach layer 1.8e308 and finish "+mod.primaryName+mod.secondaryName, "Ʊ", () => game.metaLayer.layer.gte(Infinities[0])),
     ],
     alephLayer: new AlephLayer(),
     restackLayer: new ReStackLayer(),
@@ -107,9 +110,10 @@ const game = {
         confirmations: true,
         offlineProgress: true,
         titleStyle: 2,
-        theme: "css/themes/dark.css",
-        layerNames: ["αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ", "ψϝϛͱϻϙͳϸ", ["<span class='flipped-v'>Ω</span>", "<span class='flipped-v'>Ω</span><sup>2</sup>","<span class='flipped-v'>Ω</span><sup>3</sup>"]],
-        font: "css/fonts/typespace.css"
+        theme: mod.themes[0][1],
+        layerNames: mod.layerNames[0][1],
+        font: mod.fonts[0][1],
+        saveInfo: "i have no idea"
     },
 };
 const initialGame = functions.getSaveString();

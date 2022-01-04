@@ -1,8 +1,8 @@
 var mod = {
     primaryName: "ω",
     secondaryName: "Engine",
-    version: "0.1.0 P2",
-    engineVer: "0.1.0 P2", //DO NOT MODIFY
+    version: "0.1.1",
+    engineVer: "0.1.1", //DO NOT MODIFY
     themes: [
         ["Dark", "css/themes/dark.css"],
         ["Light", "https://veprogames.github.io/omega-layers/css/main.css"],
@@ -42,6 +42,11 @@ var mod = {
         ["Comic Sans", "css/fonts/comic.css"],
         ["Arial", "css/fonts/arial.css"],
         ["Roboto", "css/fonts/roboto.css"]
+    ],
+    saves: [
+        ["Save 1", ""],
+        ["Save 2", "2"],
+        ["Save 3", "3"]
     ]
 }
 

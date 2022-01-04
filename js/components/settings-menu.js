@@ -7,7 +7,8 @@ Vue.component("settings-menu", {
                 " Click Import to load the save string from the text field.",
             themes: mod.themes,
             names: mod.layerNames,
-            fonts: mod.fonts
+            fonts: mod.fonts,
+            saves: mod.saves
         }
     },
     mounted: function()
@@ -96,6 +97,7 @@ Vue.component("settings-menu", {
         setTheme: css => functions.setTheme(css),
         setNames: js => functions.setNames(js),
         setFont: css => functions.setFont(css),
+        setSave: info => functions.setSave(info),
         volatilityUnlocked: () => functions.maxLayerUnlocked() >= 2
     },
     template: `<div class="settings">
@@ -148,6 +150,9 @@ Vue.component("settings-menu", {
     <button @click="exportGame()">Export</button>
     <button @click="importGame()">Import</button>
     <button @click="hardResetGame()">Wipe Game</button>
+</div>
+<div class="settings-row">
+    <button :class="{selected: settings.saveInfo === t[1]}" v-for="t in saves" @click="setSave(t[1])">{{t[0]}}</button>
 </div>
 <div class="settings-row">
     <textarea ref="exportBox" class="export" v-model="exportString"></textarea>

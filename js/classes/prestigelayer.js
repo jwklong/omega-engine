@@ -392,10 +392,10 @@ class PrestigeLayer
     createUpgradeTree()
     {
         this.treeUpgrades = [];
-        const upgs = []; //this is still undefined, so local var is used
+        var upgs = []; //this is still undefined, so local var is used
         const rand = new Random(this.layer);
         const rows = 5 + rand.nextInt(2);
-        let amnt = 2;
+        let amnt = 1;
         let amntBefore = 1;
 
         const requiredUpgrade = function(row, col)

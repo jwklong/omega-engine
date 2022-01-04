@@ -34,6 +34,7 @@ function tickGame(seconds)
 {
     game.timeSpent += seconds;
     saveTimer += seconds;
+    localTimer += seconds;
 
     let titleInfo = "";
     switch(game.settings.titleStyle)

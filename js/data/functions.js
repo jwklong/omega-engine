@@ -7,7 +7,7 @@ const functions = {
         }
         if(n.mag === Infinity)
         {
-            return "very much too big";
+            return "Infinite";
         }
         if(n.lt(0))
         {
@@ -106,9 +106,16 @@ const functions = {
         game.settings.layerNames = stuff;
         [LETTERS, ORDERS, GIANTS] = stuff;
     },
+    setSave: function(info)
+    {
+        this.saveGame()
+        game.settings.saveInfo = info
+        this.hardResetGame(true)
+        this.loadGame()
+    },
     createNotification: function(notification)
     {
-        if (saveTimer > 1){game.notifications.push(notification)};
+        if (localTimer > 1){game.notifications.push(notification)};
     },
     getSaveString()
     {
@@ -174,8 +181,9 @@ const functions = {
         game.timeSaved = Date.now();
         try
         {
-            localStorage.setItem(mod.primaryName+mod.secondaryName, this.getSaveString());
-            localStorage.setItem(mod.primaryName+mod.secondaryName+"_Settings", this.getSettingsSaveString());
+            localStorage.setItem(mod.primaryName+mod.secondaryName+game.settings.saveInfo, this.getSaveString());
+            localStorage.setItem(mod.primaryName+mod.secondaryName+"_Settings"+game.settings.saveInfo, this.getSettingsSaveString());
+            localStorage.setItem(mod.primaryName+mod.secondaryName+"_SaveInfo", game.settings.saveInfo);
             if(game.settings.notifications && game.settings.saveNotifications)
             {
                 functions.createNotification(new Notification(NOTIFICATION_STANDARD, "Game Saved!", "images/save.svg"));
@@ -193,7 +201,8 @@ const functions = {
     {
         let loadObj;
         const isImported = typeof(str) !== "undefined";
-        str = str || localStorage.getItem(mod.primaryName+mod.secondaryName) || null;
+        game.settings.saveInfo = game.settings.saveInfo === "i have no idea" ? localStorage.getItem(mod.primaryName+mod.secondaryName+"_SaveInfo") || "" : game.settings.saveInfo
+        str = str || localStorage.getItem(mod.primaryName+mod.secondaryName+game.settings.saveInfo) || null;
         if(str === null) return;
         if(str === "?")
         {
@@ -294,12 +303,13 @@ const functions = {
         {
             try
             {
-                const settings = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(mod.primaryName+mod.secondaryName+"_Settings")))));
+                const settings = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(mod.primaryName+mod.secondaryName+"_Settings"+game.settings.saveInfo)))));
+                settings.saveInfo = game.settings.saveInfo
                 game.settings = Object.assign(game.settings, settings);
             }
             catch(e)
             {
-                console.warn("oopsie your settings are sus\n", e.stack);
+                console.warn("Error setting settings\n", e.stack);
             }
         }
         this.setTheme(game.settings.theme)
@@ -308,7 +318,7 @@ const functions = {
 
         if(game.version !== loadObj.version)
         {
-            if(loadObj.version === "1")
+            if(loadObj.version === "1.0" || loadObj.version === "1")
             {
                 for(const l of game.layers)
                 {
@@ -330,11 +340,12 @@ const functions = {
                 functions.createNotification(new Notification(NOTIFICATION_STANDARD, "You were offline for " + functions.formatTime(t)));
             }
         }
-
+        localTimer = 0
         return true;
     },
-    hardResetGame: function()
+    hardResetGame: function(changeSave)
     {
+        if (changeSave !== true) {
         let confirmations = 0;
         do
         {
@@ -345,8 +356,8 @@ const functions = {
             }
             confirmations++;
         } while(confirmations < 3)
-
-        localStorage.setItem(mod.primaryName+mod.secondaryName, null);
+        localStorage.setItem(mod.primaryName+mod.secondaryName+game.settings.saveInfo, null);
+        }
         game.currentLayer = null;
         game.layers = [];
         functions.generateLayer(0);

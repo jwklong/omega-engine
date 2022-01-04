@@ -1,6 +1,11 @@
 Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v0.1.1</template>
+    <template v-slot:text>Fixes a few bugs and adds save management, now you can have more then 1 save stored!
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v0.1.0</template>
     <template v-slot:text>First public build, with layer names, fonts, the changelog and so much more!
     </template>
@@ -19,5 +24,6 @@ Vue.component("changelog-tab", {
     <template v-slot:title>v0.0.1</template>
     <template v-slot:text>Private Build
     </template>
+    </guide-item>
 </div>`
 })
