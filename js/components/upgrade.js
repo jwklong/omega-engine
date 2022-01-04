@@ -50,7 +50,7 @@ Vue.component("upgrade", {
     template: `<button :disabled="!canAfford || !isUnlocked" @click="upgrade.buy()" class="upgrade" :class="{maxed: maxed}">
 <p v-html="upgrade.description"></p>
 <p v-html="upgrade.getEffectDisplay()"></p>
-<p class="price"><nothing v-if="!isMetaUpgrade">{{upgrade.getPriceDisplay()}} </nothing><resource-name v-if="upgrade.level < upgrade.maxLevel" :layerid='getResourceLayer()'></resource-name></p>
+<p class="price"><label v-if="!isMetaUpgrade">{{upgrade.getPriceDisplay()}}</label> <resource-name v-if="upgrade.level < upgrade.maxLevel" :layerid='getResourceLayer()'></resource-name></p>
 <p class="layer-number" v-if="showLayerNumber">#{{formatNumber(upgrade.currentLayer(), 2, 0, 1e9)}}</p>
 </button>`
 });
