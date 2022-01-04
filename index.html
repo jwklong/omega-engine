@@ -7,7 +7,7 @@
 
     <meta name="keywords" content="&omega;Engine"/>
     <meta name="description" content="Modding Engine"/>
-    <meta name="image" content="cover.png"/>
+    <meta name="image" content="https:/jwklong.github.io/omega-engine/cover.png"/>
     <meta name="theme-color" content="#ffa600"/>
 
     <meta name="og:title" content="&omega;Engine"/>
@@ -54,6 +54,7 @@
         <settings-menu v-if="settings.tab === 'Settings'"></settings-menu>
         <volatility-tab v-if="settings.tab === 'Volatility'"></volatility-tab>
         <achievement-tab v-if="settings.tab === 'Achievements'"></achievement-tab>
+        <automator-tab v-if="settings.tab === 'Automators'"></automator-tab>
         <aleph-layer v-if="settings.tab === 'Aleph'"></aleph-layer>
         <restack-tab v-if="settings.tab === 'ReStack'"></restack-tab>
         <guide-tab v-if="settings.tab === 'Guide'"></guide-tab>

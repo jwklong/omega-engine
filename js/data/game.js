@@ -79,7 +79,7 @@ const game = {
             }),
     },
     achievements: [
-        new Achievement("Coming soon", "in a later update", "?", () => true),
+        new Achievement("Coming soon", "in a later update", mod.primaryName, () => true),
     ],
     alephLayer: new AlephLayer(),
     restackLayer: new ReStackLayer(),

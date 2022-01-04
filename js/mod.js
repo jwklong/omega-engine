@@ -1,8 +1,8 @@
 var mod = {
     primaryName: "ω",
     secondaryName: "Engine",
-    version: "0.1.0",
-    engineVer: "0.1.0", //DO NOT MODIFY
+    version: "0.1.0 P1",
+    engineVer: "0.1.0 P1", //DO NOT MODIFY
     themes: [
         ["Dark", "css/themes/dark.css"],
         ["Light", "https://veprogames.github.io/omega-layers/css/main.css"],
