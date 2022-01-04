@@ -129,6 +129,30 @@ class ReStackLayer
                             return this.level.gt(0) ? "Doesn't reset" : "Resets";
                         }
                     }),
+            ],
+            [
+                new RestackLayerUpgrade("Template",
+                    level => new Decimal("1ee308"),
+                    level => new Decimal(1).add(level), {
+                        maxLevel: 1
+                    }),
+                new RestackLayerUpgrade("Template",
+                    level => new Decimal("1ee308"),
+                    level => new Decimal(1).add(level.mul(0.15)), {
+                        maxLevel: 1,
+                        getEffectDisplay: effectDisplayTemplates.numberStandard(2, "^")
+                    }),
+            ],
+            [
+                new RestackLayerUpgrade("Template",
+                    level => new Decimal("1ee1000"),
+                    level => level.gt(0), {
+                        maxLevel: 1,
+                        getEffectDisplay: function()
+                        {
+                            return this.level.gt(0) ? "Doesn't reset" : "Resets";
+                        }
+                    }),
             ]
         ];
         this.upgradeTree[1][0].setRequirements([this.upgradeTree[0][0]], [this.upgradeTree[1][1]]);
@@ -140,6 +164,9 @@ class ReStackLayer
         this.upgradeTree[5][0].setRequirements([this.upgradeTree[4][0]], [this.upgradeTree[5][1]]);
         this.upgradeTree[5][1].setRequirements([this.upgradeTree[4][0]], [this.upgradeTree[5][0]]);
         this.upgradeTree[6][0].setRequirements([this.upgradeTree[5][0], this.upgradeTree[5][1]], []);
+        this.upgradeTree[7][0].setRequirements([this.upgradeTree[6][0]], [this.upgradeTree[7][1]]);
+        this.upgradeTree[7][1].setRequirements([this.upgradeTree[6][0]], [this.upgradeTree[7][0]]);
+        this.upgradeTree[8][0].setRequirements([this.upgradeTree[7][0], this.upgradeTree[7][1]], []);
         this.upgradeTreeNames = {
             resourceMultiplier: this.upgradeTree[0][0],
             resourceMultiplierUpgrades: this.upgradeTree[1][0],
@@ -150,7 +177,10 @@ class ReStackLayer
             substractLayers: this.upgradeTree[4][0],
             resourcePowerersStrength: this.upgradeTree[5][0],
             resourceMultipliersLevelScaling: this.upgradeTree[5][1],
-            noReset: this.upgradeTree[6][0]
+            noReset: this.upgradeTree[6][0],
+            template1: this.upgradeTree[7][0],
+            template2: this.upgradeTree[7][1],
+            template3: this.upgradeTree[8][0]
         };
     }
 
