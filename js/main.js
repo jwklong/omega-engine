@@ -131,7 +131,6 @@ function tickGame(seconds)
     {
         game.automators[k].tick(seconds);
     }
-
     for(const ach of game.achievements)
     {
         ach.tick(seconds);

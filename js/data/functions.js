@@ -108,7 +108,7 @@ const functions = {
     },
     createNotification: function(notification)
     {
-        game.notifications.push(notification);
+        if (saveTimer > 1){game.notifications.push(notification)};
     },
     getSaveString()
     {
@@ -269,7 +269,7 @@ const functions = {
                 const idx = game.achievements.findIndex(a => a.title === ach.title);
                 if(idx !== -1)
                 {
-                    game.achievements[idx].isCompconsted = ach.isCompconsted;
+                    game.achievements[idx].isCompleted = ach.isCompleted;
                 }
             }
         }
@@ -397,7 +397,7 @@ const functions = {
             ",0px 0px " + t[2] + "em currentcolor";
     },
     layerFinder: function(layer) {
-        layer = new Decimal(layer)
+        layer = new Decimal(layer).sub("1")
         document.getElementById("layernameoutput").style.color = this.textColor(layer)
         document.getElementById("layercoloroutput").style.color = this.textColor(layer)
         document.getElementById("layercoloroutput").innerHTML = this.textColor(layer)

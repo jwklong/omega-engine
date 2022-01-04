@@ -30,7 +30,7 @@ Vue.component("restack-tab", {
 <div v-if="!isMeta" class="upgrades">
     <restack-upgrade v-for="(u, i) in restack.permUpgrades" :upgrade="u" :key="i"></restack-upgrade>
 </div>
-<h4><i>Sussy</i> Upgrade</h4>
+<h4><b>Meta</b> Upgrade</h4>
 <div class="upgrades">
     <restack-upgrade :upgrade="restack.metaUpgrade"></restack-upgrade>
 </div>

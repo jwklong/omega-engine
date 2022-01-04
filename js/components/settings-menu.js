@@ -180,6 +180,7 @@ Vue.component("settings-menu", {
     <p>Original Game (Omega Layers) created by VeproGames</p>
     <p>Powered by vue.js and break_eternity.min.js</p>
     <p>` + mod.primaryName + mod.secondaryName + ` v` + mod.version +`</p>
+    ` + ((mod.primaryName + mod.secondaryName) !== "ωEngine" ? ("<p>Built with ωEngine v" + mod.engineVer + "</p>") : "") + `
 </div>
 </div>`
 })
