@@ -1,6 +1,11 @@
 Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v0.1.2</template>
+    <template v-slot:text>Adds Comfortaa font and a automator to automate buying automators! (unlocked when meta upgrade bought)
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v0.1.1</template>
     <template v-slot:text>Fixes a few bugs and adds save management, now you can have more then 1 save stored!
     </template>

@@ -42,6 +42,17 @@ const game = {
             level => level.gt(0) ? Math.pow(0.6, level.toNumber() - 1) * 60 : Infinity, null, {
                 getEffectDisplay: effectDisplayTemplates.automator()
             })),
+        autoAuto: new Automator("Auto Automators", "Automatically Max All Automators (except this)", () =>
+        {
+            for(let i = 0; i < game.automators.length - 2; i++)
+            {
+                game.automators[i].upgrade.buyMax()
+            }
+        }, new DynamicLayerUpgrade(level => level + 7, () => null, () => "Decrease the Automator interval",
+            level => Decimal.pow(10, PrestigeLayer.getPrestigeCarryOverForLayer(level.add(10).toNumber()) * 10),
+            level => level.gt(0) ? Math.pow(0.6, level.toNumber() - 1) * 500 : Infinity, null, {
+                getEffectDisplay: effectDisplayTemplates.automator()
+            })),
     },
     volatility: {
         layerVolatility: new DynamicLayerUpgrade(level => level + 1, level => level,

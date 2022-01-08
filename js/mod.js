@@ -1,8 +1,8 @@
 var mod = {
     primaryName: "ω",
     secondaryName: "Engine",
-    version: "0.1.1",
-    engineVer: "0.1.1", //DO NOT MODIFY
+    version: "0.1.2",
+    engineVer: "0.1.2", //DO NOT MODIFY
     themes: [
         ["Dark", "css/themes/dark.css"],
         ["Light", "https://veprogames.github.io/omega-layers/css/main.css"],
@@ -41,7 +41,8 @@ var mod = {
         ["Monospace Typewriter", "css/fonts/typespace.css"],
         ["Comic Sans", "css/fonts/comic.css"],
         ["Arial", "css/fonts/arial.css"],
-        ["Roboto", "css/fonts/roboto.css"]
+        ["Roboto", "css/fonts/roboto.css"],
+        ["Comfortaa", "css/fonts/comfortaa.css"]
     ],
     saves: [
         ["Save 1", ""],
