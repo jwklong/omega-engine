@@ -40,7 +40,7 @@ Vue.component("restack-tab", {
     <upgrade-tree v-if="isMeta" :upgrades="restack.upgradeTree"></upgrade-tree>
 </div>
 <button class="restack" @click="restack.restack()" :disabled="!canRestack" v-if="!isMeta">ReStack<br/>+{{formatNumber(restack.getRestackGain(), 2, 0)}} <img alt="LC" class="inline" src="images/layercoin.png"/></button>
-<p v-if="showMetaHint && !restack.canMeta()">check bacc after reaching <resource-name :layerid="23"></resource-name></p>
-<button v-if="restack.canMeta() && !isMeta" @click="restack.goMeta()" class="meta">wait a minute, why am i not impostor. time to hax to get impostor!!!!!</button>
+<p v-if="showMetaHint && !restack.canMeta()">Come back after reaching <resource-name :layerid="23"></resource-name></p>
+<button v-if="restack.canMeta() && !isMeta" @click="restack.goMeta()" class="meta">Prestige is worthless now, we are going meta!!!</button>
 </div>`
 });
