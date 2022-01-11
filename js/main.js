@@ -2,6 +2,7 @@ let dtOld = Date.now();
 let dtNew = Date.now();
 let minimizedLayer = 0;
 let saveTimer = 0;
+let localTimer = 0;
 
 let keyMap = [];
 let tabMap = {};
