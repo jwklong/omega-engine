@@ -133,9 +133,14 @@ function tickGame(seconds)
     {
         game.automators[k].tick(seconds);
     }
+
     for(const ach of game.achievements)
     {
         ach.tick(seconds);
+    }
+    for(const sAch of game.secretAchievements)
+    {
+        sAch.tick(seconds);
     }
 
     for(const n of game.notifications)

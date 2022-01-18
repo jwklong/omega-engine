@@ -1,11 +1,11 @@
 var mod = {
     primaryName: "ω",
     secondaryName: "Engine",
-    version: "0.1.2",
-    engineVer: "0.1.2", //DO NOT MODIFY
+    version: "1.0.0",
+    engineVer: "0.1.3", //DO NOT MODIFY
     themes: [
         ["Dark", "css/themes/dark.css"],
-        ["Light", "https://veprogames.github.io/omega-layers/css/main.css"],
+        ["Light (Legacy)", "https://veprogames.github.io/omega-layers/css/main.css"],
         ["Neon", "css/themes/neon.css"],
         ["Godot Blue", "css/themes/darkblue.css"],
         ["Halloween", "css/themes/spooky.css"],

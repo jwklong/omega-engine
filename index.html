@@ -32,14 +32,15 @@
                 <button @click="settings.tab = 'Layers'"><img alt="L" class="inline" src="images/layers.png"/> Layers</button>
                 <button @click="settings.tab = 'Achievements'"><img alt="A" class="inline" src="images/star.svg"/> Achievements</button>
                 <button @click="settings.tab = 'Guide'"><img alt="G" class="inline" src="images/information-circle.svg"/> Guide</button>
-                <button @click="settings.tab = 'Changelog'"><img alt="C" class="inline" src="favicon.png"> Changelog</button>
                 <button @click="settings.tab = 'Settings'"><img alt="S" class="inline" src="images/settings.svg"/> Settings</button>
             </div>
             <div>
-                <layer-locked-button v-if="!isMeta" @click="settings.tab = 'Automators'" :layerid="1"><img alt="Au" class="inline" src="images/hardware-chip.svg"/> Automators</layer-locked-button>
-                <layer-locked-button v-if="!isMeta" @click="settings.tab = 'Volatility'" :layerid="2"><img alt="V" class="inline" src="images/save.svg"/> Volatility</layer-locked-button>
-                <layer-locked-button v-if="!isMeta" @click="settings.tab = 'Aleph'" :layerid="3">ℵ Aleph</layer-locked-button>
-                <layer-locked-button @click="settings.tab = 'ReStack'" :layerid="9"><img alt="R" class="inline" src="images/layercoin.png"/> ReStack</layer-locked-button>
+                <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Automators'" :layerid="1"><img alt="Au" class="inline" src="images/hardware-chip.svg"/> Automators</layer-locked-button>
+                <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Volatility'" :layerid="2"><img alt="V" class="inline" src="images/save.svg"/> Volatility</layer-locked-button>
+                <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Aleph'" :layerid="3"><span class="aleph">ℵ</span> Aleph</layer-locked-button>
+                <layer-locked-button v-if="isLayerCategory === 'Layers'" @click="settings.tab = 'ReStack'" :layerid="9"><img alt="R" class="inline" src="images/layercoin.png"/> ReStack</layer-locked-button>
+                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Changelog'"><img alt="C" class="inline" src="favicon.png"> Changelog</button>
+                <button v-if="isLayerCategory === 'Achievements'" @click="settings.tab = 'Secret Achievements'"><img alt="Sa" class="inline" src="images/star.svg"> Secret Achievements</button>
             </div>
         </nav>
         <news-ticker v-if="settings.newsTicker"></news-ticker>
@@ -54,6 +55,7 @@
         <settings-menu v-if="settings.tab === 'Settings'"></settings-menu>
         <volatility-tab v-if="settings.tab === 'Volatility'"></volatility-tab>
         <achievement-tab v-if="settings.tab === 'Achievements'"></achievement-tab>
+        <secret-achievement-tab v-if="settings.tab === 'Secret Achievements'"></secret-achievement-tab>
         <automator-tab v-if="settings.tab === 'Automators'"></automator-tab>
         <aleph-layer v-if="settings.tab === 'Aleph'"></aleph-layer>
         <restack-tab v-if="settings.tab === 'ReStack'"></restack-tab>
@@ -134,6 +136,7 @@
 <script src="js/components/news-ticker.js"></script>
 <script src="js/components/achievement.js"></script>
 <script src="js/components/achievement-tab.js"></script>
+<script src="js/components/secret-achievement-tab.js"></script>
 <script src="js/components/notification.js"></script>
 <script src="js/components/notification-container.js"></script>
 <script src="js/components/guide-item.js"></script>

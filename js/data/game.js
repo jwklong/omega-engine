@@ -95,6 +95,10 @@ const game = {
         new Achievement("No turning back", "Go meta and be reborn", "&Omega;", () => game.metaLayer.active),
         new Achievement("Endgame", "Reach layer 1.8e308 and finish "+mod.primaryName+mod.secondaryName, "Ʊ", () => game.metaLayer.layer.gte(Infinities[0])),
     ],
+    secretAchievements: [
+        new Achievement("Meta sucks!", "Get &Omega; without meta", "&omega;&omega;&omega;&omega;&omega;", () => game.highestLayer >= 47 && !game.metaLayer.active),
+        new Achievement("Volatility sucks!", "Get &epsilon; without volatility", "&omega;&omega;&omega;&omega;&omega;", () => game.highestLayer >= 47 && !game.metaLayer.active),
+    ],
     alephLayer: new AlephLayer(),
     restackLayer: new ReStackLayer(),
     metaLayer: new MetaLayer(),

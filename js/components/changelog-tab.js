@@ -1,6 +1,10 @@
 Vue.component("changelog-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v0.1.3</template>
+    <template v-slot:text>Parts of UI are redesigned, and new Secret Achievements!
+    </template>
+    <guide-item>
     <template v-slot:title>v0.1.2</template>
     <template v-slot:text>Adds Comfortaa font and a automator to automate buying automators! (unlocked when meta upgrade bought)
     </template>
