@@ -3,6 +3,10 @@ const computed = {
     {
         return game.metaLayer.active;
     },
+    isDebug: function()
+    {
+        return mod.debugMode
+    },
     isLayerCategory: function()
     {
         category = null
@@ -17,6 +21,7 @@ const computed = {
                 break;
             case "Guide":
             case "Changelog":
+            case "Engine Changelog":
                 category = "Guide";
                 break;
             case "Achievements":
@@ -24,9 +29,10 @@ const computed = {
                 category = "Achievements";
                 break;
             case "Settings":
+            case "Debug":
                 category = "Settings";
                 break;
         }
         return category
-    }
+    },
 };

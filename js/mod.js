@@ -2,7 +2,8 @@ var mod = {
     primaryName: "ω",
     secondaryName: "Engine",
     version: "1.0.0",
-    engineVer: "0.1.3", //DO NOT MODIFY
+    engineVer: "0.2.0", //DO NOT MODIFY
+    debugMode: false,
     themes: [
         ["Dark", "css/themes/dark.css"],
         ["Light (Legacy)", "https://veprogames.github.io/omega-layers/css/main.css"],
@@ -42,13 +43,16 @@ var mod = {
         ["Comic Sans", "css/fonts/comic.css"],
         ["Arial", "css/fonts/arial.css"],
         ["Roboto", "css/fonts/roboto.css"],
-        ["Comfortaa", "css/fonts/comfortaa.css"]
+        ["Comfortaa", "css/fonts/comfortaa.css"],
+        ["Minecraft", "css/fonts/minecraft.css"],
     ],
     saves: [
         ["Save 1", ""],
         ["Save 2", "2"],
-        ["Save 3", "3"]
-    ]
+        ["Save 3", "3"],
+        ["Save 4", "4"],
+    ],
+    debugClasses: []
 }
 
 //DO NOT MODIFY CODE PAST THIS POINT AS IT IS NEEDED (unless your a pro coder then do some experimenting)

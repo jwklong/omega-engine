@@ -130,5 +130,6 @@ const game = {
         font: mod.fonts[0][1],
         saveInfo: "i have no idea"
     },
+    console: console
 };
 const initialGame = functions.getSaveString();

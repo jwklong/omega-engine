@@ -40,7 +40,9 @@
                 <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Aleph'" :layerid="3"><span class="aleph">ℵ</span> Aleph</layer-locked-button>
                 <layer-locked-button v-if="isLayerCategory === 'Layers'" @click="settings.tab = 'ReStack'" :layerid="9"><img alt="R" class="inline" src="images/layercoin.png"/> ReStack</layer-locked-button>
                 <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Changelog'"><img alt="C" class="inline" src="favicon.png"> Changelog</button>
+                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Engine Changelog'"><img alt="EC" class="inline" src="https://jwklong.github.io/omega-engine/favicon.png"> Engine Changelog</button>
                 <button v-if="isLayerCategory === 'Achievements'" @click="settings.tab = 'Secret Achievements'"><img alt="Sa" class="inline" src="images/star.svg"> Secret Achievements</button>
+                <button v-if="isLayerCategory === 'Settings' && isDebug" @click="settings.tab = 'Debug'"><img alt="S" class="inline" src="images/settings.svg"/> Debug</button>
             </div>
         </nav>
         <news-ticker v-if="settings.newsTicker"></news-ticker>
@@ -61,11 +63,14 @@
         <restack-tab v-if="settings.tab === 'ReStack'"></restack-tab>
         <guide-tab v-if="settings.tab === 'Guide'"></guide-tab>
         <changelog-tab v-if="settings.tab === 'Changelog'"></changelog-tab>
+        <engine-tab v-if="settings.tab === 'Engine Changelog'"></engine-tab>
+        <debug-tab v-if="settings.tab === 'Debug'"></debug-tab>
     </main>
     <footer>
         <div>
             <a href="https://veprogames.github.io/omega-layers" target="_blank">Original Game</a>
             <a href="https://github.com/jwklong/omega-engine" target="_blank">Source Code</a>
+            <a href="https://discord.gg/xF9KYsYsMA" target="_blank">Community Server</a>
         </div>
     </footer>
 </div>
@@ -87,7 +92,10 @@
     var GIANTS = ["<span class='flipped-v'>Ω</span>", "<span class='flipped-v'>Ω</span><sup>2</sup>","<span class='flipped-v'>Ω</span><sup>3</sup>"]
 </script>
 
+<script src="js/debugclass.js"></script>
 <script src="js/mod.js"></script>
+
+<script src="js/debug/test.js"></script>
 
 <script src="js/vocabulary.js"></script>
 <script src="js/classes/random.js"></script>
@@ -142,6 +150,8 @@
 <script src="js/components/guide-item.js"></script>
 <script src="js/components/guide-tab.js"></script>
 <script src="js/components/changelog-tab.js"></script>
+<script src="js/components/engine-tab.js"></script>
+<script src="js/components/debug-tab.js"></script>
 
 <script src="js/data/functions.js"></script>
 <script src="js/data/computed.js"></script>

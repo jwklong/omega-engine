@@ -1,0 +1,8 @@
+@font-face{
+    font-family: minecraft;
+    src: url('../../fonts/minecraft.otf');
+}
+
+:root{
+    --primary-font: minecraft
+}
