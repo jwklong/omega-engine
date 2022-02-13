@@ -378,6 +378,10 @@ const functions = {
     textColor: function(layer)
     {
         const lid = new Decimal(layer);
+        if(lid.gte(Infinities[3]))
+        {
+            return "#ffffff";
+        }
         if(lid.gte(Infinities[2]))
         {
             return "#ff9100";

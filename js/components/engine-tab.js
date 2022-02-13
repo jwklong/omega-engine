@@ -1,6 +1,11 @@
 Vue.component("engine-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v0.2.1</template>
+    <template v-slot:text>All buttons menu in debug mode, new random layer names and 4th infinity!
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v0.2.0</template>
     <template v-slot:text>Debug mode, game changelog (different to engine changelog), minecraft font, link to the community server (which you should join) and alot more!
     </template>

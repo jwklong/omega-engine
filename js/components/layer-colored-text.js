@@ -4,6 +4,10 @@ Vue.component("layer-colored-text", {
         textColor: function()
         {
             const lid = new Decimal(this.getLayerId());
+            if(this.getLayerId() instanceof Decimal && this.getLayerId().gte(Infinities[3]))
+            {
+                return "#ffffff";
+            }
             if(this.getLayerId() instanceof Decimal && this.getLayerId().gte(Infinities[2]))
             {
                 return "#ff9100";

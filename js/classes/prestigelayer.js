@@ -75,7 +75,7 @@ class PrestigeLayer
             }
             return GIANTS[1] + "<sup>" + PrestigeLayer.getNameForLayer(layer.div(Infinities[1]).floor().sub(1)) + "</sup>";
         }
-        if(layer instanceof Decimal && layer.gte(Infinities[2]))
+        if(layer instanceof Decimal && layer.gte(Infinities[2]) && !layer.gte(Infinities[3]))
         {
             const infinityOrder = Decimal.log(layer, Infinities[2]).floor();
             if(infinityOrder.gte(6))
@@ -84,6 +84,16 @@ class PrestigeLayer
                 return "(" + GIANTS[2] + "↑↑" + functions.formatNumber(infinityOrder, 3, 0, 1e9) + ")<sup>" + exp + "</sup>";
             }
             return GIANTS[2] + "<sup>" + PrestigeLayer.getNameForLayer(layer.div(Infinities[2]).floor().sub(1)) + "</sup>";
+        }
+        if(layer instanceof Decimal && layer.gte(Infinities[3]))
+        {
+            const infinityOrder = Decimal.log(layer, Infinities[3]).floor();
+            if(infinityOrder.gte(6))
+            {
+                const exp = PrestigeLayer.getNameForLayer(layer.div(Decimal.pow(Infinities[3], infinityOrder)).floor().sub(1));
+                return "(" + GIANTS[3] + "↑↑" + functions.formatNumber(infinityOrder, 3, 0, 1e9) + ")<sup>" + exp + "</sup>";
+            }
+            return GIANTS[3] + "<sup>" + PrestigeLayer.getNameForLayer(layer.div(Infinities[3]).floor().sub(1)) + "</sup>";
         }
         const letters = LETTERS;
         const orders = ORDERS;
@@ -774,4 +784,4 @@ class PrestigeLayer
             }
         }
     }
-}
+};
