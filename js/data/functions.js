@@ -364,6 +364,7 @@ const functions = {
         functions.loadGame(initialGame);
         game.currentLayer = game.layers[0];
         game.settings.tab = "Layers"
+        temp.endgameOverride = false
     },
     hslToHex: function(h, s, l) {
         l /= 100;
