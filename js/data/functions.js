@@ -306,6 +306,7 @@ const functions = {
                 const settings = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(mod.primaryName+mod.secondaryName+"_Settings"+game.settings.saveInfo)))));
                 settings.saveInfo = game.settings.saveInfo
                 game.settings = Object.assign(game.settings, settings);
+                game.settings.tab = "Layers"
             }
             catch(e)
             {
@@ -363,8 +364,8 @@ const functions = {
         functions.generateLayer(0);
         functions.loadGame(initialGame);
         game.currentLayer = game.layers[0];
-        game.settings.tab = "Layers"
         temp.endgameOverride = false
+        game.settings.tab = "Layers"
     },
     hslToHex: function(h, s, l) {
         l /= 100;
