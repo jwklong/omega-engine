@@ -91,6 +91,7 @@
     var LETTERS = "αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ";
     var ORDERS = "ψϝϛͱϻϙͳϸ";
     var GIANTS = ["Ʊ", "Ʊ<sup>2</sup>","Ʊ<sup>3</sup>","Ʊ<sup>2<sup>2</sup></sup>"]
+    var endgameReq = false
 </script>
 
 <script src="js/vocabulary.js"></script>
@@ -162,5 +163,8 @@
 <script src="js/data/game.js"></script>
 
 <script src="js/main.js"></script>
+<script>
+    var endgameReq = game.metaLayer.layer.gte(Infinities[0])
+</script>
 </body>
 </html>

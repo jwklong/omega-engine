@@ -37,7 +37,7 @@ function tickGame(seconds)
     saveTimer += seconds;
     localTimer += seconds;
 
-    if (game.isEndgame && !temp.endgameOverride) {
+    if (isEndgame && !temp.endgameOverride) {
         game.settings.tab = "Endgame"
         temp.endgameOverride = true
     }

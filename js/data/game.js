@@ -130,6 +130,5 @@ const game = {
         font: mod.fonts[0][1],
         saveInfo: "i have no idea"
     },
-    isEndgame: false //this.metaLayer.layer.gte(Infinities[0])
 };
 const initialGame = functions.getSaveString();
