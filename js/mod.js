@@ -2,7 +2,7 @@ var mod = {
     primaryName: "ω",
     secondaryName: "Engine",
     version: "1.0.0",
-    engineVer: "0.2.1", //DO NOT MODIFY
+    engineVer: "0.2.2", //DO NOT MODIFY
     debugMode: true,
     themes: [
         ["Dark", "css/themes/dark.css"],
@@ -39,9 +39,9 @@ var mod = {
         ]],
         ["Random",
         [
-            Utils.createRandomWord(10),
-            Utils.createRandomWord(10),
-            [Utils.createRandomWord(2),Utils.createRandomWord(3),Utils.createRandomWord(4),Utils.createRandomWord(5)]
+            Utils.createRandomWord(10, new Random(Date.now()).nextInt()),
+            Utils.createRandomWord(10, new Random(Math.floor(Date.now()/2)).nextInt()),
+            [Utils.createRandomWord(2, new Random(Math.floor(Date.now()/3)).nextInt()),Utils.createRandomWord(3, new Random(Math.floor(Date.now()/4)).nextInt()),Utils.createRandomWord(4, new Random(Math.floor(Date.now()/5)).nextInt()),Utils.createRandomWord(5, new Random(Math.floor(Date.now()/6)).nextInt())]
         ]]
     ],
     fonts: [

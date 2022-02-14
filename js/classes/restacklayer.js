@@ -197,7 +197,18 @@ class ReStackLayer
     getRestackGain()
     {
         const l = game.metaLayer.active ? game.metaLayer.layer : new Decimal(game.layers.length - 1);
-        return l >= 9 ? Decimal.pow(10, l.sub(9).floor()) : new Decimal(0);
+        let gain = l >= 9 ? Decimal.pow(10, l.sub(9).floor()) : new Decimal(0);
+        if (!game.metaLayer.active) {
+            for (const layer of game.layers) {
+                if (layer.hasChallenges() && layer.layer >= 9) {
+                    for(const c of layer.challenges.filter(ch => ch.rewardType === CHALLENGE_REWARD_RESTACK))
+                    {
+                        gain = gain.mul(c.applyReward());
+                    }
+                }
+            }
+        }
+        return gain
     }
 
     allPermUpgradesBought()
@@ -253,7 +264,7 @@ class ReStackLayer
         game.layers = [];
         functions.generateLayer(0);
         game.currentLayer = game.layers[0];
-        if(this.upgradeTreeNames.noReset.apply() === "Resets") {
+        if(this.upgradeTreeNames.noReset.level == 0) {
             this.timeSpent = 0;
         }
         if(game.metaLayer.active)

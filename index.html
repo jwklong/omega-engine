@@ -65,6 +65,7 @@
         <changelog-tab v-if="settings.tab === 'Changelog'"></changelog-tab>
         <engine-tab v-if="settings.tab === 'Engine Changelog'"></engine-tab>
         <debug-tab v-if="settings.tab === 'Debug'"></debug-tab>
+        <endgame-tab v-if="settings.tab === 'Endgame'"></endgame-tab>
     </main>
     <footer>
         <div>
@@ -101,7 +102,7 @@
 <script src="js/mod.js"></script>
 
 <script src="js/debug/test.js"></script>
-<script src="js/debug/test2.js"></script>
+<script src="js/debug/TabTesting.js"></script>
 
 <script src="js/classes/generator.js"></script>
 <script src="js/classes/powergenerator.js"></script>
@@ -153,9 +154,11 @@
 <script src="js/components/changelog-tab.js"></script>
 <script src="js/components/engine-tab.js"></script>
 <script src="js/components/debug-tab.js"></script>
+<script src="js/components/endgame-tab.js"></script>
 
 <script src="js/data/functions.js"></script>
 <script src="js/data/computed.js"></script>
+<script src="js/data/temp.js"></script>
 <script src="js/data/game.js"></script>
 
 <script src="js/main.js"></script>

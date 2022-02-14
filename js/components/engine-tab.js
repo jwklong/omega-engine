@@ -1,6 +1,11 @@
 Vue.component("engine-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v0.2.2</template>
+    <template v-slot:text>Challenges can now give a restack reward and endgame menu added!
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v0.2.1</template>
     <template v-slot:text>All buttons menu in debug mode, new random layer names and 4th infinity!
     </template>

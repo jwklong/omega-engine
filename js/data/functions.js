@@ -363,6 +363,7 @@ const functions = {
         functions.generateLayer(0);
         functions.loadGame(initialGame);
         game.currentLayer = game.layers[0];
+        game.settings.tab = "Layers"
     },
     hslToHex: function(h, s, l) {
         l /= 100;

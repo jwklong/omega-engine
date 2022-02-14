@@ -1,7 +1,7 @@
 const CHALLENGE_EFFECT_UPGRADESTRENGTH_SIMPLEBOOST = 0, CHALLENGE_EFFECT_PRICES_POWER = 1, CHALLENGE_EFFECT_GENMULTI = 2,
     CHALLENGE_EFFECT_PRESTIGEREWARD = 3;
 const CHALLENGE_REWARD_POWERGENERATORS = 0, CHALLENGE_REWARD_GENMULTI = 1, CHALLENGE_REWARD_PRESTIGEREWARD = 2,
-    CHALLENGE_REWARD_GENMULTI_ABS = 3;
+    CHALLENGE_REWARD_GENMULTI_ABS = 3, CHALLENGE_REWARD_RESTACK = 4;
 
 class Challenge
 {
@@ -60,6 +60,8 @@ class Challenge
                 return "Prestige Reward of Layer " + PrestigeLayer.getNameForLayer(this.cfg.layerid) + " is x" + functions.formatNumber(this.applyReward(), 2, 2) + " higher";
             case CHALLENGE_REWARD_GENMULTI_ABS:
                 return "All Alpha Generators are x" + functions.formatNumber(this.applyReward(), 2, 2) + " stronger";
+            case CHALLENGE_REWARD_RESTACK:
+                return "Restack gain is multiplied by x" + functions.formatNumber(this.applyReward(), 2, 2);
             default:
                 return "A Cake."
         }

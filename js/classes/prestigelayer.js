@@ -385,6 +385,13 @@ class PrestigeLayer
                         return Decimal.pow(10, baseLog.mul(level));
                     }
                     break;
+                case CHALLENGE_REWARD_RESTACK:
+                    const randomthing = rand.nextDouble()*this.layer
+                    formula_reward = function(level)
+                    {
+                        return new Decimal(1+((0.02*randomthing)*level))
+                    }
+                    break;
                 default:
                     return;
             }

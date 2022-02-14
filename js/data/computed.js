@@ -32,6 +32,9 @@ const computed = {
             case "Debug":
                 category = "Settings";
                 break;
+            default:
+                category = "Unknown";
+                break;
         }
         return category
     },

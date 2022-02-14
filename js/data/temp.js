@@ -1,0 +1,3 @@
+var temp = {
+    endgameOverride: false
+}
