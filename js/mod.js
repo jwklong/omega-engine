@@ -2,7 +2,7 @@ var mod = {
     primaryName: "ω",
     secondaryName: "Engine",
     version: "1.0.0",
-    engineVer: "0.2.2 P1", //DO NOT MODIFY
+    engineVer: "0.2.2 P2", //DO NOT MODIFY
     debugMode: true,
     themes: [
         ["Dark", "css/themes/dark.css"],

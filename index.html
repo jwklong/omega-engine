@@ -165,6 +165,12 @@
 <script src="js/main.js"></script>
 <script>
     var endgameReq = game.metaLayer.layer.gte(Infinities[0])
+    setInterval(function() {
+        if (endgameReq && !temp.endgameOverride) {
+            game.settings.tab = "Endgame"
+            temp.endgameOverride = true
+        }
+    }, 1000/60)
 </script>
 </body>
 </html>

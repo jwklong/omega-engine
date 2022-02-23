@@ -293,7 +293,7 @@ class ReStackLayer
     {
         this.restack(false);
         game.metaLayer.active = true;
-        functions.createNotification(new Notification(NOTIFICATION_SPECIAL, "You are a impostor, infinite crewmate layers remain."));
+        functions.createNotification(new Notification(NOTIFICATION_SPECIAL, "Meta has given you infinite power, its time to make more layers!"));
     }
 
     tick(dt)

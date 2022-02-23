@@ -36,12 +36,7 @@ function tickGame(seconds)
     game.timeSpent += seconds;
     saveTimer += seconds;
     localTimer += seconds;
-
-    if (endgameReq && !temp.endgameOverride) {
-        game.settings.tab = "Endgame"
-        temp.endgameOverride = true
-    }
-
+    
     let titleInfo = "";
     switch(game.settings.titleStyle)
     {
