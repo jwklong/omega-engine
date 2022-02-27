@@ -91,7 +91,7 @@ const game = {
     },
     achievements: [
         new Achievement("You played!", "If you dont have this, you shouldn't exist", "&omega;", () => true),
-        new Achievement("Aleph-0", "Start gaining aleph!", "&aleph;", () => game.alephLayer.aleph.gte("0")),
+        new Achievement("Aleph-0", "Start gaining aleph!", "&aleph;", () => game.alephLayer.aleph.gt("0")),
         new Achievement("Aleph-1", "Have 1e75 aleph", "&aleph;<sub>1</sub>", () => game.alephLayer.aleph.gte("1e75")),
         new Achievement("Aleph-2", "Have 1e200 aleph", "&aleph;<sub>2</sub>", () => game.alephLayer.aleph.gte("1e200")),
         new Achievement("Aleph-3", "Have 1.8e308 aleph", "&aleph;<sub>3</sub>", () => game.alephLayer.aleph.gte("1.8e308")),
