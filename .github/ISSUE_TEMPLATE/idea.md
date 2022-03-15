@@ -2,7 +2,7 @@
 name: Idea
 about: Features that could be added.
 title: 'Feature request: '
-labels: minor
+labels: Minor, General
 assignees: jwklong
 
 ---
