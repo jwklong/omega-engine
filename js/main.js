@@ -84,10 +84,10 @@ function tickGame(seconds)
         }
     }
 
-    game.highestLayer = Math.max(game.highestLayer, game.layers.length - 1);
-    game.highestLayer = Math.max(game.highestLayer, game.metaLayer.layer);
-    game.highestUpdatedLayer = Math.max(game.highestUpdatedLayer, game.layers.length - 1);
-    game.highestUpdatedLayer = Math.max(game.highestUpdatedLayer, game.metaLayer.layer);
+    game.highestLayer = Decimal.max(new Decimal(game.highestLayer), game.layers.length - 1);
+    game.highestLayer = Decimal.max(new Decimal(game.highestLayer), game.metaLayer.layer);
+    game.highestUpdatedLayer = Decimal.max(new Decimal(game.highestUpdatedLayer), game.layers.length - 1);
+    game.highestUpdatedLayer = Decimal.max(new Decimal(game.highestUpdatedLayer), game.metaLayer.layer);
 
     const minActiveLayer = game.settings.showMinLayers;
     const maxActiveLayer = game.layers.length - game.settings.showMaxLayers;
