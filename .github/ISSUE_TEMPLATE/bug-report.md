@@ -1,8 +1,8 @@
 ---
 name: Bug report
-about: when the bug must be fixed
-title: 'Bug:'
-labels: bug, not reviewed
+about: Found a bug? Make a bug report!
+title: 'Bug: '
+labels: minor
 assignees: jwklong
 
 ---
