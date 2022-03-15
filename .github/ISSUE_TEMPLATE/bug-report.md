@@ -2,7 +2,7 @@
 name: Bug report
 about: Found a bug? Make a bug report!
 title: 'Bug: '
-labels: minor
+labels: Minor
 assignees: jwklong
 
 ---
