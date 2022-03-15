@@ -2,7 +2,7 @@
 name: Settings request
 about: Customiseable changes.
 title: 'Settings Request: '
-labels: minor, settings
+labels: Minor, Settings
 assignees: jwklong
 
 ---
