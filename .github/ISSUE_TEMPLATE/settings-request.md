@@ -1,8 +1,8 @@
 ---
-name: Layer Names Request
-about: Suggest an idea for this project
-title: 'Layer Names:'
-labels: layer names, not reviewed
+name: Settings request
+about: Customiseable changes.
+title: 'Settings Request: '
+labels: minor, settings
 assignees: jwklong
 
 ---
