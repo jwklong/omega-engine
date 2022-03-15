@@ -1,8 +1,8 @@
 ---
 name: Idea
-about: content for the next update
-title: 'Feature request:'
-labels: feature, not reviewed
+about: Features that could be added.
+title: 'Feature request: '
+labels: minor
 assignees: jwklong
 
 ---
