@@ -27,7 +27,7 @@ class Generator
 
     getProductionMulti()
     {
-        let multi = new Decimal(1);
+        let multi = new Decimal(2);
         //resource and simple boost
         if(this.id === 0)
         {
