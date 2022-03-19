@@ -115,7 +115,7 @@ const functions = {
     },
     createNotification: function(notification)
     {
-        if (localTimer > 1){game.notifications.push(notification)};
+        if (localTimer > 1){game.notifications.push(notification)}
     },
     getSaveString()
     {
