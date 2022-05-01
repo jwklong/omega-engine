@@ -3,8 +3,8 @@ Vue.component("aleph-locked-button", {
     methods: {
         totalAleph: () => game.alephLayer.aleph,
     },
-    template: `<button @click="$emit('click')" :disabled="totalAleph().gte(aleph)">
-    <span v-if="totalAleph().gte(aleph)">Reach {aleph} <span class="aleph">ℵ</span></span>
+    template: `<button @click="$emit('click')" :disabled="totalAleph().lte(aleph)">
+    <span v-if="totalAleph().lte(aleph)">Reach {aleph} <span class="aleph">ℵ</span></span>
     <span v-else><slot></slot></span>
 </button>`
 })
