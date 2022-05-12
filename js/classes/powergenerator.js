@@ -4,11 +4,11 @@ class PowerGenerator extends Generator
     {
         if(this.generates !== null)
         {
-            this.generates.amount = this.generates.amount.add(this.getProductionPS().mul(dt).mul(2));
+            this.generates.amount = this.generates.amount.add(this.getProductionPS().mul(dt));
         }
         else
         {
-            this.layer.power = this.layer.power.add(this.getProductionPS().mul(dt).mul(2));
+            this.layer.power = this.layer.power.add(this.getProductionPS().mul(dt));
         }
     }
 

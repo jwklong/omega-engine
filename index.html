@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>&Omega;L NG+</title>
+    <title>&omega;Engine</title>
     <link rel="icon" href="favicon.png"/>
 
     <meta name="keywords" content="&omega;Engine"/>
@@ -38,7 +38,7 @@
                 <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Automators'" :layerid="1"><img alt="Au" class="inline" src="images/hardware-chip.svg"/> Automators</layer-locked-button>
                 <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Volatility'" :layerid="2"><img alt="V" class="inline" src="images/save.svg"/> Volatility</layer-locked-button>
                 <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Aleph'" :layerid="3"><span class="aleph">ℵ</span> Aleph</layer-locked-button>
-                <layer-locked-button v-if="isLayerCategory === 'Layers'" @click="settings.tab = 'ReStack'" :layerid="15"><img alt="R" class="inline" src="images/layercoin.png"/> ReStack</layer-locked-button>
+                <layer-locked-button v-if="isLayerCategory === 'Layers'" @click="settings.tab = 'ReStack'" :layerid="9"><img alt="R" class="inline" src="images/layercoin.png"/> ReStack</layer-locked-button>
                 <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Changelog'"><img alt="C" class="inline" src="favicon.png"> Changelog</button>
                 <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Engine Changelog'"><img alt="EC" class="inline" src="https://jwklong.github.io/omega-engine/favicon.png"> Engine Changelog</button>
                 <button v-if="isLayerCategory === 'Achievements && game.secretAchievements.filter(ach => ach.isCompleted).length > 0'" @click="settings.tab = 'Secret Achievements'"><img alt="Sa" class="inline" src="images/star.svg"> Secret Achievements</button>
