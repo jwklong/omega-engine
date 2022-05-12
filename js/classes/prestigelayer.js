@@ -141,9 +141,9 @@ class PrestigeLayer
         if(this.hasGenerators())
         {
             const bonus = game.layers[this.layer + 1] && game.layers[this.layer + 1].timesReset > 0 ? this.generators[0].getProductionMulti() : new Decimal(0);
-            return Decimal.max(1, (this.generators[0].getProductionPS().div(10)).add(bonus).round());
+            return Decimal.max(1, (this.generators[0].getProductionPS().div(10)).add(bonus).round()).mul(10);
         }
-        return new Decimal(1);
+        return new Decimal(10);
     }
 
     hasGenerators()

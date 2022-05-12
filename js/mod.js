@@ -1,6 +1,6 @@
 var mod = {
-    primaryName: "ω",
-    secondaryName: "Engine",
+    primaryName: "ΩL",
+    secondaryName: " NG+",
     version: "1.0.0",
     engineVer: "0.2.3", //DO NOT MODIFY
     debugMode: true,
