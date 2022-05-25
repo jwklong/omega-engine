@@ -58,6 +58,11 @@ var mod = {
         ["Save 3", "3"],
         ["Save 4", "4"],
     ],
+    extraNames: [
+        this.primaryName+this.secondaryName, //title name
+        this.primaryName+this.secondaryName, //save name
+        this.primaryName+this.secondaryName, //save .txt name
+    ],
     debugClasses: []
 }
 
