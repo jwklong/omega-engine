@@ -38,4 +38,7 @@ const computed = {
         }
         return category
     },
+    secretAchUnlock: function() {
+        return game.secretAchievements.filter(ach => ach.isCompleted).length > 0
+    },
 };
