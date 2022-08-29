@@ -3,7 +3,8 @@ Vue.component("layer-navigation", {
     data: function()
     {
         return {
-            showOrdinals: game.settings.showLayerOrdinals
+            showOrdinals: game.settings.showLayerOrdinals,
+            debugEnabled: mod.debugMode
         }
     },
     methods:
@@ -32,7 +33,7 @@ Vue.component("layer-navigation", {
     <resource-name :layerid="l.layer"></resource-name>
     <layer-colored-text v-if="showOrdinals" class="ordinal" :layerid="l.layer">#{{Number(l.layer) + 1}}</layer-colored-text>
 </button>
-<button style="background: green; font-size: 1.25rem;" onclick="functions.generateLayer(game.layers.length)">
+<button style="background: green; font-size: 1.25rem;" onclick="functions.generateLayer(game.layers.length)" v-if="debugEnabled">
     <span class="resource-name" style="color: white">+</span>
 </button>
 </div>`
