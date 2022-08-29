@@ -38,7 +38,4 @@ const computed = {
         }
         return category
     },
-    game: function() {
-        return game
-    } //lazily adding this to fix a bug
 };
