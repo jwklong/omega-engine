@@ -16,7 +16,7 @@ const computed = {
             case "Automators":
             case "Volatility":
             case "Aleph":
-            case "Restack":
+            case "ReStack":
                 category = "Layers";
                 break;
             case "Guide":
