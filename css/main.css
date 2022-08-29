@@ -82,14 +82,15 @@ header nav div{
     padding: 0.5rem 2rem;
 }
 
-header nav div:first-child{
+header nav div{
     justify-content: space-between;
 }
 
 header nav button{
     padding: 0.2em;
-    margin-right: 2rem;
     font-size: 110%;
+    max-width: 170px;
+    width: 20vw;
 }
 
 .omega{
@@ -126,6 +127,7 @@ img.inline{
     color: var(--color-contrast);
     transform: translateY(10%);
     fill: var(--color-contrast);
+    filter: invert();
 }
 
 .flipped-v{
