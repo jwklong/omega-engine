@@ -23,9 +23,9 @@ Vue.component("restack-tab", {
         formatNumber: (n, prec, prec1000, lim) => functions.formatNumber(n, prec, prec1000, lim)
     },
     template: `<div class="restack-tab">
-<button class="restack-2" @click="restack.restack()" :disabled="!canRestack" v-if="isMeta">+{{formatNumber(restack.getRestackGain(), 2, 0)}} <img alt="LC" class="inline" src="images/layercoin.png"/></button>
-<p>You have <span class="big-number">{{formatNumber(restack.layerCoins, 2, 0)}}</span> <img alt="LC" class="inline" src="images/layercoin.png"/></p>
-<button v-if="!restack.allPermUpgradesBought() && !isMeta" @click="restack.respecPermUpgrades()">Respec: get your spent <img alt="LC" class="inline" src="images/layercoin.png"/> back, and do a ReStack without reward</button>
+<button class="restack-2" @click="restack.restack()" :disabled="!canRestack" v-if="isMeta">+{{formatNumber(restack.getRestackGain(), 2, 0)}} <img alt="LC" class="inline" src="images/layercoin.svg"/></button>
+<p>You have <span class="big-number">{{formatNumber(restack.layerCoins, 2, 0)}}</span> <img alt="LC" class="inline" src="images/layercoin.svg"/></p>
+<button v-if="!restack.allPermUpgradesBought() && !isMeta" @click="restack.respecPermUpgrades()">Respec: get your spent <img alt="LC" class="inline" src="images/layercoin.svg"/> back, and do a ReStack without reward</button>
 <h4 v-if="!isMeta">Permanent Upgrades</h4>
 <div v-if="!isMeta" class="upgrades">
     <restack-upgrade v-for="(u, i) in restack.permUpgrades" :upgrade="u" :key="i"></restack-upgrade>
@@ -39,7 +39,7 @@ Vue.component("restack-tab", {
     <button class="respec" @click="restack.respecUpgradeTree()">Respec</button>
     <upgrade-tree v-if="isMeta" :upgrades="restack.upgradeTree"></upgrade-tree>
 </div>
-<button class="restack" @click="restack.restack()" :disabled="!canRestack" v-if="!isMeta">ReStack<br/>+{{formatNumber(restack.getRestackGain(), 2, 0)}} <img alt="LC" class="inline" src="images/layercoin.png"/></button>
+<button class="restack" @click="restack.restack()" :disabled="!canRestack" v-if="!isMeta">ReStack<br/>+{{formatNumber(restack.getRestackGain(), 2, 0)}} <img alt="LC" class="inline" src="images/layercoin.svg"/></button>
 <p v-if="showMetaHint && !restack.canMeta()">Come back after reaching <resource-name :layerid="23"></resource-name></p>
 <button v-if="restack.canMeta() && !isMeta" @click="restack.goMeta()" class="meta">Prestige is worthless now, we are going meta!!!</button>
 </div>`
