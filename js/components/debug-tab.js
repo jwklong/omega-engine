@@ -7,7 +7,8 @@ Vue.component("debug-tab", {
         for (v in mod.debugClasses) {
             text += v.getButtons()
         }
-        return text + `
+        return text
+    } + `
     </template>
     </guide-item>
     ` + function() {
