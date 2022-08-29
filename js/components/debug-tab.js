@@ -9,7 +9,7 @@ Vue.component("debug-tab", {
     <template v-slot:title>All buttons</template>
     <template v-slot:text>All buttons from debug menu items<br>
     <span v-for="debugClass in debugClasses">
-        {{ debugClass.getButtons() }}
+        {{debugClass.getButtons()}}
     </span>
     </template>
     </guide-item>
