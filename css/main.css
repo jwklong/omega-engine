@@ -93,6 +93,30 @@ header nav button{
     width: 20vw;
 }
 
+header nav div:nth-child(2) button:nth-child(1) {
+    background-image: linear-gradient(125deg, #ff5e00 , #ffc800);
+    color: white;
+    border: 0;
+}
+
+header nav div:nth-child(2) button:nth-child(2) {
+    background-image: linear-gradient(90deg, #ff8100, #ffc800, #ff8100);
+    color: white;
+    border: 0;
+}
+
+header nav div:nth-child(2) button:nth-child(3) {
+    background-image: radial-gradient(#00ff5a, #00a905);
+    color: white;
+    border: 0;
+}
+
+header nav div:nth-child(2) button:nth-child(4) {
+    background-image: linear-gradient(90deg, #61b8ff, #ff64a0, #d5ff55);
+    color: white;
+    border: 0;
+}
+
 .omega{
     color: var(--color-primary);
 }
