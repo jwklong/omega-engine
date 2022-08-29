@@ -1,6 +1,5 @@
 Vue.component("debug-tab", {
     template: `<div class="guide-tab">
-    ` + mod.debugClasses[0].getInfo() + `
     <guide-item>
     <template v-slot:title>All buttons</template>
     <template v-slot:text>All buttons from debug menu items<br>` + mod.debugClasses[0].getButtons() + mod.debugClasses[1].getButtons() + mod.debugClasses[2].getButtons() + `
