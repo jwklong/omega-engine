@@ -39,10 +39,10 @@
                 <layer-locked-button id="volatilityButton" v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Volatility'" :layerid="2"><img alt="V" class="inline" src="images/save.svg"/> Volatility</layer-locked-button>
                 <layer-locked-button id="alephButton" v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Aleph'" :layerid="3"><span class="aleph">ℵ</span> Aleph</layer-locked-button>
                 <layer-locked-button id="restackButton" v-if="isLayerCategory === 'Layers'" @click="settings.tab = 'ReStack'" :layerid="9"><img alt="R" class="inline" src="images/layercoin.png"/> ReStack</layer-locked-button>
-                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Changelog'"><img alt="C" class="inline" src="favicon.png"> Changelog</button>
-                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Engine Changelog'"><img alt="EC" class="inline" src="https://jwklong.github.io/omega-engine/favicon.png"> Engine Changelog</button>
+                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Changelog'"><img style="filter: none" alt="C" class="inline" src="favicon.png"> Changelog</button>
+                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Engine Changelog'"><img style="filter: none" alt="EC" class="inline" src="https://jwklong.github.io/omega-engine/favicon.png"> Engine Changelog</button>
                 <button v-if="isLayerCategory === 'Achievements && game.secretAchievements.filter(ach => ach.isCompleted).length > 0'" @click="settings.tab = 'Secret Achievements'"><img alt="Sa" class="inline" src="images/star.svg"> Secret Achievements</button>
-                <button v-if="isLayerCategory === 'Settings' && isDebug" @click="settings.tab = 'Debug'"><img alt="S" class="inline" src="images/settings.svg"/> Debug</button>
+                <button id="debugButton" v-if="isLayerCategory === 'Settings' && isDebug" @click="settings.tab = 'Debug'"><img alt="S" class="inline" src="images/settings.svg"/> Debug</button>
             </div>
         </nav>
         <news-ticker v-if="settings.newsTicker"></news-ticker>
