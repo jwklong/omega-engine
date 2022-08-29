@@ -117,6 +117,12 @@ header nav button{
     border: 0;
 }
 
+#debugButton {
+    background-color: #f0f;
+    color: white;
+    border: 0;
+}
+
 .omega{
     color: var(--color-primary);
 }
