@@ -1,25 +1,13 @@
 Vue.component("debug-tab", {
-    data: function() {
-        return {
-            debugClasses: mod.debugClasses
-        }
-    },
     template: `<div class="guide-tab">
+    ` + mod.debugClasses[0].getInfo() + `
     <guide-item>
     <template v-slot:title>All buttons</template>
-    <template v-slot:text>All buttons from debug menu items<br>
-    <span v-for="debugClass in debugClasses">
-        {{debugClass.getButtons()}}
-    </span>
+    <template v-slot:text>All buttons from debug menu items<br>` + mod.debugClasses[0].getButtons() + mod.debugClasses[1].getButtons() + mod.debugClasses[2].getButtons() + `
     </template>
     </guide-item>
-    ` + function() {
-        let text = ""
-        for (v in mod.debugClasses) {
-            text += v.getInfo()
-            text += "\n"
-        }
-        return text
-    } + `
+    ` + mod.debugClasses[0].getInfo() + 
+    mod.debugClasses[1].getInfo() +  
+    mod.debugClasses[2].getInfo() + `
 </div>`
-})
+}) 
