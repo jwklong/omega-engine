@@ -6,7 +6,7 @@ var mod = {
     debugMode: true,
     themes: [
         ["Dark", "css/themes/dark.css"],
-        ["Light (Legacy)", "https://veprogames.github.io/omega-layers/css/main.css"],
+        ["Dark Alt (by Jeehan2561)", "css/themes/darkalt.css"],
         ["Neon", "css/themes/neon.css"],
         ["Godot Blue", "css/themes/darkblue.css"],
         ["Halloween", "css/themes/spooky.css"],
