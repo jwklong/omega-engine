@@ -1,8 +1,8 @@
 @font-face{
-    font-family: arial-font;
+    font-family: ubuntu-font;
     src: url('../../fonts/ubuntu.ttf');
 }
 
 :root{
-    --primary-font: arial-font
+    --primary-font: ubuntu-font
 }
