@@ -16,5 +16,5 @@ Vue.component("achievement", {
             <div @mouseenter="showTooltip = true" @mouseleave="showTooltip = false" :class="{completed: achievement.isCompleted}" class="achievement" v-html="achievement.html"></div>
         </div>
      </div>
-     <br v-else>
+     <br v-else>`
 });
