@@ -55,6 +55,7 @@ var mod = {
         ["Comic Sans", "css/fonts/comic.css"],
         ["Arial", "css/fonts/arial.css"],
         ["Roboto", "css/fonts/roboto.css"],
+        ["Ubuntu", "css/fonts/ubuntu.css"],
         ["Comfortaa", "css/fonts/comfortaa.css"],
         ["Minecraft", "css/fonts/minecraft.css"],
     ],
