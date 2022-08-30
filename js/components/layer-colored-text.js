@@ -20,7 +20,7 @@ Vue.component("layer-colored-text", {
             {
                 return "#ff00ff";
             }
-            if(this.getLayerId() instanceof Decimal && this.getLayerId().lt(1)
+            if(this.getLayerId() instanceof Decimal && this.getLayerId().lt(0)
             {
                 return "#000000";
             }
