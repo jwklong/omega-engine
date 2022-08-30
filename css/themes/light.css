@@ -1,0 +1,14 @@
+:root {
+    --background-body: #644d00;
+    --background-header: #c99a00;
+    --color-base: #ffc400;
+    --color-primary: #fff;
+    --color-hover: #ffd23e;
+    --color-hover-strong: #ffdf77;
+    --color-contrast: #fff;
+    --color-success: #00c109;
+    --button-dark: #483900;
+    --notification--error: #ff5e00;
+    --notification--success: #60ff30;
+    --notification--special: #ffd900;
+}
