@@ -35,8 +35,8 @@ Vue.component("layer-colored-text", {
         textGlow: function()
         {
             const thickness = 0.025 * this.getLayerId();
-            const t = [Math.min(0.7, thickness), Math.min(0.7, thickness / 2),
-                Math.min(0.7, Math.max(0, thickness - 0.3) / 4)];
+            const t = [Math.min(Math.min(0.7, thickness), 0), Math.min(Math.min(0.7, thickness / 2), 0),
+                Math.min(Math.min(0.7, Math.max(0, thickness - 0.3) / 4), 0)];
             const color = "currentcolor";
             return "0px 0px " + t[0] + "em currentcolor"+
                 ",0px 0px " + t[1] + "em currentcolor"+
