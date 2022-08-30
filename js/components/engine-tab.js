@@ -1,6 +1,11 @@
 Vue.component("engine-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title><h1>v1.0.0</h1></template>
+    <template v-slot:text>test
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v0.2.3</template>
     <template v-slot:text>New achievements & aleph locked buttons!
     </template>
