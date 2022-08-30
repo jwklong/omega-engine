@@ -4,7 +4,7 @@ Vue.component("layer-locked-button", {
         maxLayerUnlocked: () => game.highestLayer,
         Decimal: (x) => new Decimal(x)
     },
-    template: `<button @click="$emit('click')" :disabled="maxLayerUnlocked().gte(layerid)">
+    template: `<button @click="$emit('click')" :disabled="Decimal(maxLayerUnlocked()).lt(layerid)">
     <span v-if="maxLayerUnlocked() < layerid">Reach <resource-name :layerid="Decimal(layerid)"></resource-name></span>
     <span v-else><slot></slot></span>
 </button>`
