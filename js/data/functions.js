@@ -415,8 +415,8 @@ const functions = {
     textGlow: function(layer)
     {
         const thickness = 0.025 * layer;
-        const t = [Math.min(Math.min(0.7, thickness), 0), Math.min(Math.min(0.7, thickness / 2), 0),
-                Math.min(Math.min(0.7, Math.max(0, thickness - 0.3) / 4), 0)];
+        const t = [Math.max(0, Math.min(0.7, thickness)), Math.max(0, Math.min(0.7, thickness / 2)),
+            Math.max(0, Math.min(0.7, Math.max(0, thickness - 0.3) / 4))];
         return "0px 0px " + t[0] + "em currentcolor"+
             ",0px 0px " + t[1] + "em currentcolor"+
             ",0px 0px " + t[2] + "em currentcolor";
