@@ -8,6 +8,7 @@ var mod = {
     themes: [
         ["Dark", "css/themes/dark.css"],
         ["Dark Alt (by Jeehan2561)", "css/themes/darkalt.css"],
+        ["Light", "css/themes/light.css"],
         ["Neon", "css/themes/neon.css"],
         ["Godot Blue", "css/themes/darkblue.css"],
         ["Halloween", "css/themes/spooky.css"],
