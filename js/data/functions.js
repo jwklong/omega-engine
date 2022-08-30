@@ -398,7 +398,11 @@ const functions = {
         }
         if(lid.gte(mod.Infinities[0]))
         {
-            return "#ff00ff";
+             return "#ff00ff";
+        }
+        if(lid.lt(0))
+        {
+             return "#000000";
         }
         let h = 33 * Math.min(lid.toNumber(), 10000);
         if(lid.gt(10000))
@@ -418,7 +422,7 @@ const functions = {
             ",0px 0px " + t[2] + "em currentcolor";
     },
     layerFinder: function(layer) {
-        layer = new Decimal(layer).sub("1")
+        layer = new Decimal(layer)
         document.getElementById("layernameoutput").style.color = this.textColor(layer)
         document.getElementById("layercoloroutput").style.color = this.textColor(layer)
         document.getElementById("layercoloroutput").innerHTML = this.textColor(layer)
