@@ -4,6 +4,7 @@ var mod = {
     version: "1.0.0",
     engineVer: "1.0.0", //DO NOT MODIFY
     debugMode: true,
+    Infinities: [new Decimal(2).pow(1024), new Decimal("1.8e30008"), new Decimal("1.8e300000008"), new Decimal("ee38")],
     themes: [
         ["Dark", "css/themes/dark.css"],
         ["Dark Alt (by Jeehan2561)", "css/themes/darkalt.css"],
