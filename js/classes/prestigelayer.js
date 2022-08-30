@@ -77,7 +77,7 @@ class PrestigeLayer
         }
         if(layer instanceof Decimal && layer.gte(mod.Infinities[2]) && !layer.gte(mod.Infinities[3]))
         {
-            const infinityOrder = Decimal.log(layer, Infinities[2]).floor();
+            const infinityOrder = Decimal.log(layer, mod.Infinities[2]).floor();
             if(infinityOrder.gte(6))
             {
                 const exp = PrestigeLayer.getNameForLayer(layer.div(Decimal.pow(mod.Infinities[2], infinityOrder)).floor().sub(1));
