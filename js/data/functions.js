@@ -384,19 +384,19 @@ const functions = {
     textColor: function(layer)
     {
         const lid = new Decimal(layer);
-        if(lid.gte(Infinities[3]))
+        if(lid.gte(mod.Infinities[3]))
         {
             return "#ffffff";
         }
-        if(lid.gte(Infinities[2]))
+        if(lid.gte(mod.Infinities[2]))
         {
             return "#ff9100";
         }
-        if(lid.gte(Infinities[1]))
+        if(lid.gte(mod.Infinities[1]))
         {
             return "#00ffb7";
         }
-        if(lid.gte(Infinities[0]))
+        if(lid.gte(mod.Infinities[0]))
         {
             return "#ff00ff";
         }
