@@ -88,7 +88,6 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
 
 <script>
-    const Infinities = [new Decimal(2).pow(1024), new Decimal("1.8e30008"), new Decimal("1.8e300000008"), new Decimal("ee38")]
     var LETTERS = "αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ";
     var ORDERS = "ψϝϛͱϻϙͳϸ";
     var GIANTS = ["Ʊ", "Ʊ<sup>2</sup>","Ʊ<sup>3</sup>","Ʊ<sup>2<sup>2</sup></sup>"]
@@ -168,7 +167,7 @@
 
 <script src="js/main.js"></script>
 <script>
-    var endgameReq = game.metaLayer.layer.gte(Infinities[0])
+    var endgameReq = game.metaLayer.layer.gte(mod.Infinities[0])
     setInterval(function() {
         if (endgameReq && !temp.endgameOverride) {
             game.settings.tab = "Endgame"
