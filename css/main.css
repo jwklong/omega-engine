@@ -78,9 +78,8 @@ header nav{
 
 header nav div{
     display: flex;
-    justify-content: left;
-    padding: 0.5rem 2rem;
     justify-content: space-between;
+    padding: 0.5rem 2rem;
 }
 
 header nav button{
