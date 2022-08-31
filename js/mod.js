@@ -1,4 +1,4 @@
-var mod = {
+const mod = {
     primaryName: "ω",
     secondaryName: "Engine",
     version: "1.0.0",
