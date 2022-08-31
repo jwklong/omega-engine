@@ -3,7 +3,8 @@ Vue.component("layer-navigation", {
     data: function()
     {
         return {
-            showOrdinals: game.settings.showLayerOrdinals
+            showOrdinals: game.settings.showLayerOrdinals,
+            debugEnabled: mod.debugMode
         }
     },
     methods:
@@ -31,6 +32,9 @@ Vue.component("layer-navigation", {
 <button :class="{selected: l.layer === currentLayer() && multipleLayers()}" :title="fullLayerName(l.layer)" v-if="isDisplayed(i)" v-for="(l, i) in layers" :key="i" @click="setCurrentLayer(l)" :style="{fontSize: buttonFontSize(l)}">
     <resource-name :layerid="l.layer"></resource-name>
     <layer-colored-text v-if="showOrdinals" class="ordinal" :layerid="l.layer">#{{Number(l.layer) + 1}}</layer-colored-text>
+</button>
+<button style="background: green; font-size: 1.25rem;" onclick="functions.generateLayer(game.layers.length)" v-if="debugEnabled">
+    <span class="resource-name" style="color: white">+</span>
 </button>
 </div>`
 });

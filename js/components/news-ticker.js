@@ -12,7 +12,14 @@ Vue.component("news-ticker", {
                 "incremental thing i guess",
                 "omega layers but steam engine",
                 "mod.js: powering layers",
-                "i ran out of words on my hard drive :("
+                "i ran out of words on my hard drive :(",
+                "what if i told you that secret achievements are real",
+                "omega layers 2, coming in 2048 years",
+                "finally a major release",
+                "go visit omega layers ez and sussy layers 2",
+                "join the community server",
+                "content when",
+                "omega engine v-1.0.0: we removed all the features that aren't the main game"
             ],
             currentMessage: "",
             messageIndex: -1

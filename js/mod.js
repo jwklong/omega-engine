@@ -1,23 +1,31 @@
-var mod = {
+const mod = {
     primaryName: "ω",
     secondaryName: "Engine",
     version: "1.0.0",
-    engineVer: "0.2.3 P1", //DO NOT MODIFY
-    debugMode: true,
+    engineVer: "1.0.0", //DO NOT MODIFY
+    debugMode: false,
+    Infinities: [new Decimal(2).pow(1024), new Decimal("1.8e30008"), new Decimal("1.8e300000008"), new Decimal("ee38")],
     themes: [
         ["Dark", "css/themes/dark.css"],
-        ["Light (Legacy)", "https://veprogames.github.io/omega-layers/css/main.css"],
+        ["Dark Alt (by Jeehan2561)", "css/themes/darkalt.css"],
+        ["Light", "css/themes/light.css"],
         ["Neon", "css/themes/neon.css"],
         ["Godot Blue", "css/themes/darkblue.css"],
         ["Halloween", "css/themes/spooky.css"],
         ["eXPerience", "css/themes/experience.css"]
     ],
     layerNames: [
-        ["Ω-Lλγers",
+        ["Greek",
         [
             "αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ",
             "ψϝϛͱϻϙͳϸ",
             ["<span class='flipped-v'>Ω</span>", "<span class='flipped-v'>Ω</span><sup>2</sup>","<span class='flipped-v'>Ω</span><sup>3</sup>","<span class='flipped-v'>Ω</span><sup>2<sup>2</sup></sup>"]
+        ]],
+        ["Latin",
+        [
+            "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "ðþȝƿəŋſÐÞȜǷƏŊ",
+            "æœĳǉ"
         ]],
         ["Alphabet",
         [
@@ -49,6 +57,7 @@ var mod = {
         ["Comic Sans", "css/fonts/comic.css"],
         ["Arial", "css/fonts/arial.css"],
         ["Roboto", "css/fonts/roboto.css"],
+        ["Ubuntu", "css/fonts/ubuntu.css"],
         ["Comfortaa", "css/fonts/comfortaa.css"],
         ["Minecraft", "css/fonts/minecraft.css"],
     ],
@@ -57,6 +66,11 @@ var mod = {
         ["Save 2", "2"],
         ["Save 3", "3"],
         ["Save 4", "4"],
+    ],
+    extraNames: [
+        this.primaryName+this.secondaryName, //title name
+        this.primaryName+this.secondaryName, //save name
+        this.primaryName+this.secondaryName, //save .txt name
     ],
     debugClasses: []
 }

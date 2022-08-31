@@ -99,9 +99,12 @@ const functions = {
     },
     setNames: function(stuff)
     {
-        if (stuff === "refresh") {
+        if (stuff == "refresh") {
             window.location.reload();
             return
+        }
+        if (stuff[2].length != 4 && mod.debugMode == true) {
+            console.warn(`${stuff[2].length} infinity symbols detected in layer names, expected 4`)
         }
         game.settings.layerNames = stuff;
         [LETTERS, ORDERS, GIANTS] = stuff;
@@ -381,21 +384,25 @@ const functions = {
     textColor: function(layer)
     {
         const lid = new Decimal(layer);
-        if(lid.gte(Infinities[3]))
+        if(lid.gte(mod.Infinities[3]))
         {
             return "#ffffff";
         }
-        if(lid.gte(Infinities[2]))
+        if(lid.gte(mod.Infinities[2]))
         {
             return "#ff9100";
         }
-        if(lid.gte(Infinities[1]))
+        if(lid.gte(mod.Infinities[1]))
         {
             return "#00ffb7";
         }
-        if(lid.gte(Infinities[0]))
+        if(lid.gte(mod.Infinities[0]))
         {
-            return "#ff00ff";
+             return "#ff00ff";
+        }
+        if(lid.lt(0))
+        {
+             return "#000000";
         }
         let h = 33 * Math.min(lid.toNumber(), 10000);
         if(lid.gt(10000))
@@ -408,14 +415,14 @@ const functions = {
     textGlow: function(layer)
     {
         const thickness = 0.025 * layer;
-        const t = [Math.min(0.7, thickness), Math.min(0.7, thickness / 2),
-            Math.min(0.7, Math.max(0, thickness - 0.3) / 4)];
+        const t = [Math.max(0, Math.min(0.7, thickness)), Math.max(0, Math.min(0.7, thickness / 2)),
+            Math.max(0, Math.min(0.7, Math.max(0, thickness - 0.3) / 4))];
         return "0px 0px " + t[0] + "em currentcolor"+
             ",0px 0px " + t[1] + "em currentcolor"+
             ",0px 0px " + t[2] + "em currentcolor";
     },
     layerFinder: function(layer) {
-        layer = new Decimal(layer).sub("1")
+        layer = new Decimal(layer)
         document.getElementById("layernameoutput").style.color = this.textColor(layer)
         document.getElementById("layercoloroutput").style.color = this.textColor(layer)
         document.getElementById("layercoloroutput").innerHTML = this.textColor(layer)

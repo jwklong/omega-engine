@@ -167,16 +167,16 @@ Vue.component("settings-menu", {
     <p>Controls: M to Max All on the selected Layer<br/>
     Left and Right Arrows to change Layers<br/>
     P to Prestige the selected Layer<br/>
-    First Letter of a tab ([L]ayers, [V]olatility) to select it; C to select Achievements</p>
+    First Letter of a tab ([L]ayers, [S]ettings) to select it; C to select Achievements</p>
 </div>
 <div class="credits">
-    <h2>Layer Finder by jwklong</h2>
+    <h2>Layer Info Finder</h2><br>
     <h3>Layer ID:</h3>
     <input type="input" min="1" max="Infinity" id="layerID">
-    <button onclick="functions.layerFinder(document.getElementById('layerID').value)">Get Layer</button>
-    <h3>Output:</h3>
-    <h4>Layer: <a id="layernameoutput"></a></h4>
-    <h5>Hex Color: <a id="layercoloroutput"></a></h5>
+    <button onclick="functions.layerFinder(document.getElementById('layerID').value)">Get Layer Info</button><br>
+    <h3>Output:</h3><br>
+    <h4>Layer: <a id="layernameoutput"></a></h4><br>
+    <h5>Hex Color: <a id="layercoloroutput"></a></h5><br>
     <h5>Glow Info: <a id="layerglowoutput"></a></h5>
 </div>
 <div class="credits">

@@ -29,20 +29,20 @@
         <nav>
             <div>
                 <h2 id="superImportantTitle"><span class="omega">ω</span>Engine</h2>
-                <button @click="settings.tab = 'Layers'"><img alt="L" class="inline" src="images/layers.png"/> Layers</button>
+                <button @click="settings.tab = 'Layers'"><img alt="L" class="inline" src="images/layers.svg"/> Layers</button>
                 <button @click="settings.tab = 'Achievements'"><img alt="A" class="inline" src="images/star.svg"/> Achievements</button>
                 <button @click="settings.tab = 'Guide'"><img alt="G" class="inline" src="images/information-circle.svg"/> Guide</button>
                 <button @click="settings.tab = 'Settings'"><img alt="S" class="inline" src="images/settings.svg"/> Settings</button>
             </div>
             <div>
-                <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Automators'" :layerid="1"><img alt="Au" class="inline" src="images/hardware-chip.svg"/> Automators</layer-locked-button>
-                <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Volatility'" :layerid="2"><img alt="V" class="inline" src="images/save.svg"/> Volatility</layer-locked-button>
-                <layer-locked-button v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Aleph'" :layerid="3"><span class="aleph">ℵ</span> Aleph</layer-locked-button>
-                <layer-locked-button v-if="isLayerCategory === 'Layers'" @click="settings.tab = 'ReStack'" :layerid="9"><img alt="R" class="inline" src="images/layercoin.png"/> ReStack</layer-locked-button>
-                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Changelog'"><img alt="C" class="inline" src="favicon.png"> Changelog</button>
-                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Engine Changelog'"><img alt="EC" class="inline" src="https://jwklong.github.io/omega-engine/favicon.png"> Engine Changelog</button>
-                <button v-if="isLayerCategory === 'Achievements && game.secretAchievements.filter(ach => ach.isCompleted).length > 0'" @click="settings.tab = 'Secret Achievements'"><img alt="Sa" class="inline" src="images/star.svg"> Secret Achievements</button>
-                <button v-if="isLayerCategory === 'Settings' && isDebug" @click="settings.tab = 'Debug'"><img alt="S" class="inline" src="images/settings.svg"/> Debug</button>
+                <layer-locked-button id="automatorButton" v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Automators'" :layerid="1"><img alt="Au" class="inline" src="images/hardware-chip.svg"/> Automators</layer-locked-button>
+                <layer-locked-button id="volatilityButton" v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Volatility'" :layerid="2"><img alt="V" class="inline" src="images/save.svg"/> Volatility</layer-locked-button>
+                <layer-locked-button id="alephButton" v-if="!isMeta && isLayerCategory === 'Layers'" @click="settings.tab = 'Aleph'" :layerid="3"><span class="aleph">ℵ</span> Aleph</layer-locked-button>
+                <layer-locked-button id="restackButton" v-if="isLayerCategory === 'Layers'" @click="settings.tab = 'ReStack'" :layerid="9"><img alt="R" class="inline" src="images/layercoin.svg"/> ReStack</layer-locked-button>
+                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Changelog'"><img style="filter: none" alt="C" class="inline" src="favicon.png"> Changelog</button>
+                <button v-if="isLayerCategory === 'Guide'" @click="settings.tab = 'Engine Changelog'"><img style="filter: none" alt="EC" class="inline" src="https://jwklong.github.io/omega-engine/favicon.png"> Engine Changelog</button>
+                <button v-if="isLayerCategory === 'Achievements' && secretAchUnlock" @click="settings.tab = 'Secret Achievements'"><img alt="Sa" class="inline" src="images/star.svg"> Secret Achievements</button>
+                <button id="debugButton" v-if="isLayerCategory === 'Settings' && isDebug" @click="settings.tab = 'Debug'"><img alt="S" class="inline" src="images/settings.svg"/> Debug</button>
             </div>
         </nav>
         <news-ticker v-if="settings.newsTicker"></news-ticker>
@@ -87,7 +87,6 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
 
 <script>
-    const Infinities = [new Decimal("1.8e308"), new Decimal("1.8e30008"), new Decimal("1.8e300000008"), new Decimal("ee38")]
     var LETTERS = "αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ";
     var ORDERS = "ψϝϛͱϻϙͳϸ";
     var GIANTS = ["Ʊ", "Ʊ<sup>2</sup>","Ʊ<sup>3</sup>","Ʊ<sup>2<sup>2</sup></sup>"]
@@ -103,7 +102,8 @@
 <script src="js/mod.js"></script>
 
 <script src="js/debug/test.js"></script>
-<script src="js/debug/TabTesting.js"></script>
+<script src="js/debug/tabTesting.js"></script>
+<script src="js/debug/debugSaves.js"></script>
 
 <script src="js/classes/generator.js"></script>
 <script src="js/classes/powergenerator.js"></script>
@@ -120,6 +120,7 @@
 <script src="js/components/layer-colored-text.js"></script>
 <script src="js/components/layer-locked-button.js"></script>
 <script src="js/components/aleph-locked-button.js"></script>
+<script src="js/components/restack-locked-button.js"></script>
 <script src="js/components/generator.js"></script>
 <script src="js/components/generator-table.js"></script>
 <script src="js/components/resource-name.js"></script>
@@ -165,7 +166,7 @@
 
 <script src="js/main.js"></script>
 <script>
-    var endgameReq = game.metaLayer.layer.gte(Infinities[0])
+    var endgameReq = game.metaLayer.layer.gte(mod.Infinities[0])
     setInterval(function() {
         if (endgameReq && !temp.endgameOverride) {
             game.settings.tab = "Endgame"

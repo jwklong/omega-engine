@@ -12,8 +12,23 @@ Vue.component("guide-tab", {
     },
     template: `<div class="guide-tab">
     <guide-item>
-        <template v-slot:title>Coming soon</template>
-        <template v-slot:text>in a later update
+        <template v-slot:title>Guide Template</template>
+        <template v-slot:text>Guide Template
+        </template>
+    </guide-item>
+    <guide-item v-if="alephUnlocked">
+        <template v-slot:title>Aleph Guide Template</template>
+        <template v-slot:text>Guide Template
+        </template>
+    </guide-item>
+    <guide-item v-if="restackUnlocked">
+        <template v-slot:title>Restack Guide Template</template>
+        <template v-slot:text>Guide Template
+        </template>
+    </guide-item v-if="metaUnlocked">
+    <guide-item>
+        <template v-slot:title>Meta Guide Template</template>
+        <template v-slot:text>Guide Template
         </template>
     </guide-item>
 </div>`

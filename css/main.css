@@ -78,18 +78,49 @@ header nav{
 
 header nav div{
     display: flex;
-    justify-content: left;
-    padding: 0.5rem 2rem;
-}
-
-header nav div:first-child{
     justify-content: space-between;
+    padding: 0.5rem 2rem;
 }
 
 header nav button{
     padding: 0.2em;
-    margin-right: 2rem;
     font-size: 110%;
+    max-width: 170px;
+    width: 20vw;
+}
+
+header nav button:hover{
+    transform: scale(1.3)
+}
+
+#automatorButton {
+    background-image: linear-gradient(125deg, #ff5e00 , #ffc800);
+    color: white;
+    border: 0;
+}
+
+#volatilityButton {
+    background-image: linear-gradient(90deg, #ff8100, #ffc800, #ff8100);
+    color: white;
+    border: 0;
+}
+
+#alephButton {
+    background-image: radial-gradient(#00ff5a, #00a905);
+    color: white;
+    border: 0;
+}
+
+#restackButton {
+    background-image: linear-gradient(90deg, #61b8ff, #ff64a0, #d5ff55);
+    color: white;
+    border: 0;
+}
+
+#debugButton {
+    background-color: #f0f;
+    color: white;
+    border: 0;
 }
 
 .omega{
@@ -126,6 +157,7 @@ img.inline{
     color: var(--color-contrast);
     transform: translateY(10%);
     fill: var(--color-contrast);
+    filter: invert();
 }
 
 .flipped-v{
@@ -215,6 +247,7 @@ div.layer-navigation button{
 
 div.layer-navigation button:hover{
     background-color: var(--color-hover-strong);
+    transform: scale(1)
 }
 
 div.layer-navigation button .ordinal{
@@ -241,11 +274,12 @@ button{
     padding: 2px 4px;
     border: 1px solid var(--color-primary);
 
-    transition: background-color 500ms, filter 250ms;
+    transition: background-color 500ms, filter 250ms, transform 500ms;
 }
 
 button:hover:not(:disabled){
     background-color: var(--color-hover);
+    transform: scale(1.02)
 }
 
 button:active:not(:disabled){
@@ -711,6 +745,12 @@ p.resource-display > span:first-child{
 .settings textarea{
     resize: none;
     user-select: all;
+}
+
+input#layerID {
+    background-color: var(--background-body);
+    border: 1px solid var(--color-primary);
+    color: var(--color-contrast);
 }
 
 .settings .credits{

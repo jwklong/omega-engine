@@ -55,45 +55,45 @@ class PrestigeLayer
         {
             return "-" + PrestigeLayer.getNameForLayer(new Decimal("-1").minus(nLayer))
         }
-        if(layer instanceof Decimal && layer.gte(Infinities[0]) && !layer.gte(Infinities[1]))
+        if(layer instanceof Decimal && layer.gte(mod.Infinities[0]) && !layer.gte(mod.Infinities[1]))
         {
-            const infinityOrder = Decimal.log(layer, Infinities[0]).floor();
+            const infinityOrder = Decimal.log(layer, mod.Infinities[0]).floor();
             if(infinityOrder.gte(6))
             {
-                const exp = PrestigeLayer.getNameForLayer(layer.div(Decimal.pow(Infinities[0], infinityOrder)).floor().sub(1));
+                const exp = PrestigeLayer.getNameForLayer(layer.div(Decimal.pow(mod.Infinities[0], infinityOrder)).floor().sub(1));
                 return "(" + GIANTS[0] + "↑↑" + functions.formatNumber(infinityOrder, 3, 0, 1e9) + ")<sup>" + exp + "</sup>";
             }
-            return GIANTS[0] + "<sup>" + PrestigeLayer.getNameForLayer(layer.div(Infinities[0]).floor().sub(1)) + "</sup>";
+            return GIANTS[0] + "<sup>" + PrestigeLayer.getNameForLayer(layer.div(mod.Infinities[0]).floor().sub(1)) + "</sup>";
         }
-        if(layer instanceof Decimal && layer.gte(Infinities[1]) && !layer.gte(Infinities[2]))
+        if(layer instanceof Decimal && layer.gte(mod.Infinities[1]) && !layer.gte(mod.Infinities[2]))
         {
-            const infinityOrder = Decimal.log(layer, Infinities[1]).floor();
+            const infinityOrder = Decimal.log(layer, mod.Infinities[1]).floor();
             if(infinityOrder.gte(6))
             {
-                const exp = PrestigeLayer.getNameForLayer(layer.div(Decimal.pow(Infinities[1], infinityOrder)).floor().sub(1));
+                const exp = PrestigeLayer.getNameForLayer(layer.div(Decimal.pow(mod.Infinities[1], infinityOrder)).floor().sub(1));
                 return "(" + GIANTS[1] + "↑↑" + functions.formatNumber(infinityOrder, 3, 0, 1e9) + ")<sup>" + exp + "</sup>";
             }
-            return GIANTS[1] + "<sup>" + PrestigeLayer.getNameForLayer(layer.div(Infinities[1]).floor().sub(1)) + "</sup>";
+            return GIANTS[1] + "<sup>" + PrestigeLayer.getNameForLayer(layer.div(mod.Infinities[1]).floor().sub(1)) + "</sup>";
         }
-        if(layer instanceof Decimal && layer.gte(Infinities[2]) && !layer.gte(Infinities[3]))
+        if(layer instanceof Decimal && layer.gte(mod.Infinities[2]) && !layer.gte(mod.Infinities[3]))
         {
-            const infinityOrder = Decimal.log(layer, Infinities[2]).floor();
+            const infinityOrder = Decimal.log(layer, mod.Infinities[2]).floor();
             if(infinityOrder.gte(6))
             {
-                const exp = PrestigeLayer.getNameForLayer(layer.div(Decimal.pow(Infinities[2], infinityOrder)).floor().sub(1));
+                const exp = PrestigeLayer.getNameForLayer(layer.div(Decimal.pow(mod.Infinities[2], infinityOrder)).floor().sub(1));
                 return "(" + GIANTS[2] + "↑↑" + functions.formatNumber(infinityOrder, 3, 0, 1e9) + ")<sup>" + exp + "</sup>";
             }
-            return GIANTS[2] + "<sup>" + PrestigeLayer.getNameForLayer(layer.div(Infinities[2]).floor().sub(1)) + "</sup>";
+            return GIANTS[2] + "<sup>" + PrestigeLayer.getNameForLayer(layer.div(mod.Infinities[2]).floor().sub(1)) + "</sup>";
         }
-        if(layer instanceof Decimal && layer.gte(Infinities[3]))
+        if(layer instanceof Decimal && layer.gte(mod.Infinities[3]))
         {
-            const infinityOrder = Decimal.log(layer, Infinities[3]).floor();
+            const infinityOrder = Decimal.log(layer, mod.Infinities[3]).floor();
             if(infinityOrder.gte(6))
             {
-                const exp = PrestigeLayer.getNameForLayer(layer.div(Decimal.pow(Infinities[3], infinityOrder)).floor().sub(1));
+                const exp = PrestigeLayer.getNameForLayer(layer.div(Decimal.pow(mod.Infinities[3], infinityOrder)).floor().sub(1));
                 return "(" + GIANTS[3] + "↑↑" + functions.formatNumber(infinityOrder, 3, 0, 1e9) + ")<sup>" + exp + "</sup>";
             }
-            return GIANTS[3] + "<sup>" + PrestigeLayer.getNameForLayer(layer.div(Infinities[3]).floor().sub(1)) + "</sup>";
+            return GIANTS[3] + "<sup>" + PrestigeLayer.getNameForLayer(layer.div(mod.Infinities[3]).floor().sub(1)) + "</sup>";
         }
         const letters = LETTERS;
         const orders = ORDERS;
@@ -293,7 +293,7 @@ class PrestigeLayer
         {
             return new Decimal(1);
         }
-        const boostRes = Decimal.min(this.resource, Infinities[0]).mul(Decimal.pow(Decimal.max(1, this.resource.div(Infinities[0])), 0.2));
+        const boostRes = Decimal.min(this.resource, Infinities[0]).mul(Decimal.pow(Decimal.max(1, this.resource.div(mod.Infinities[0])), 0.2));
         const challengePow = game.currentChallenge && game.currentChallenge.type === CHALLENGE_EFFECT_UPGRADESTRENGTH_SIMPLEBOOST ? game.currentChallenge.applyEffect() : 1;
         const boost = boostRes.add(1).pow(2 * Math.pow(this.getExponentialBoostFactor(), this.layer - 1)).pow(challengePow);
         return this.hasSimpleBoost() ? boost : new Decimal(1);

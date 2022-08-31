@@ -1,6 +1,11 @@
 Vue.component("engine-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title><h1>v1.0.0</h1></template>
+    <template v-slot:text>The biggest update yet! Adds many new debug mode features, two new themes (one replacing the old light theme), new button stylings, latin layer names, updated layer name finder, ubuntu font, and alot of bug fixing!
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title>v0.2.3</template>
     <template v-slot:text>New achievements & aleph locked buttons!
     </template>
