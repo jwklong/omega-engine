@@ -80,9 +80,6 @@ header nav div{
     display: flex;
     justify-content: left;
     padding: 0.5rem 2rem;
-}
-
-header nav div{
     justify-content: space-between;
 }
 
