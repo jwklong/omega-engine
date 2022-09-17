@@ -293,7 +293,7 @@ class PrestigeLayer
         {
             return new Decimal(1);
         }
-        const boostRes = Decimal.min(this.resource, Infinities[0]).mul(Decimal.pow(Decimal.max(1, this.resource.div(mod.Infinities[0])), 0.2));
+        const boostRes = Decimal.min(this.resource, mod.Infinities[0]).mul(Decimal.pow(Decimal.max(1, this.resource.div(mod.Infinities[0])), 0.2));
         const challengePow = game.currentChallenge && game.currentChallenge.type === CHALLENGE_EFFECT_UPGRADESTRENGTH_SIMPLEBOOST ? game.currentChallenge.applyEffect() : 1;
         const boost = boostRes.add(1).pow(2 * Math.pow(this.getExponentialBoostFactor(), this.layer - 1)).pow(challengePow);
         return this.hasSimpleBoost() ? boost : new Decimal(1);
