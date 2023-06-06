@@ -1,0 +1,16 @@
+{
+    "name": "ωEngine",
+    "short_name": "ωEngine",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#202020",
+    "theme_color": "#ffc400",
+    "description": "Modding Engine",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+        }
+    ]
+}
