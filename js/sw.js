@@ -1,4 +1,4 @@
-const cacheName = mod.extraNames[1];
+const cacheName = 'omega-engine'
 
 self.addEventListener("fetch", event => {
     event.respondWith((async () => {
