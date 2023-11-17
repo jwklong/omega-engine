@@ -45,6 +45,12 @@ const mod = {
             "01",
             "2345"
         ]],
+        ["Russian",
+        [
+            'абвгдеёжзийклмнопрстуфхцчшщъыьэюя',
+            "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
+            "ІѢѲѴ"
+        ]],
         ["Random",
         [
             Utils.createRandomWord(10, new Random(Date.now()).nextInt()),
