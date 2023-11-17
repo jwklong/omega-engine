@@ -45,6 +45,24 @@ const mod = {
             "01",
             "2345"
         ]],
+        ["Gender",
+        [
+            '♂♀⚦⚨⚩',
+            "⚥⚢⚣⚤",
+            "⚧"
+        ]],
+        ["Abbreviature",
+        [
+            'KMBTqQsSOND',
+            "UDTqQsSON",
+            "VTqQsSON"
+        ]],
+        ["Ultra-Layers",
+        [
+            "абвгдеёжзийклмнопрстуфхцчшщъыьеюяАБВГДЕЁЖЗИЙКЛМНОПРСТЫФХЦЧШЩЪЫЬЭЮЯ​​",
+            "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ",
+            "R"
+        ]],
         ["Random",
         [
             Utils.createRandomWord(10, new Random(Date.now()).nextInt()),
