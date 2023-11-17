@@ -57,6 +57,12 @@ const mod = {
             "UDTqQsSON",
             "VTqQsSON"
         ]],
+        ["Ultra-Layers",
+        [
+            "ကခဂဃငစဆဇဈဉညဋဌဍဎဏတထဒဓနပဖဗဘမယရလဠဝဟသဿ​​",
+            "၁၂၃၄၅၆၇၈၉၀",
+            "ဧဩဪ"
+        ]],
         ["Random",
         [
             Utils.createRandomWord(10, new Random(Date.now()).nextInt()),
