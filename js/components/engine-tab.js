@@ -1,6 +1,11 @@
 Vue.component("engine-tab", {
     template: `<div class="changelog-tab">
     <guide-item>
+    <template v-slot:title>v1.0.1<</template>
+    <template v-slot:text>Support for layer names, a new Modern theme, the Source Code Pro font, what more could you ask for!
+    </template>
+    </guide-item>
+    <guide-item>
     <template v-slot:title><h1>v1.0.0</h1></template>
     <template v-slot:text>The biggest update yet! Adds many new debug mode features, two new themes (one replacing the old light theme), new button stylings, latin layer names, updated layer name finder, ubuntu font, and alot of bug fixing!
     </template>

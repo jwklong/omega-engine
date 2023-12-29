@@ -172,7 +172,7 @@ Vue.component("settings-menu", {
 <div class="credits">
     <h2>Layer Info Finder</h2><br>
     <h3>Layer ID:</h3>
-    <input type="input" min="1" max="Infinity" id="layerID">
+    <input type="input" value="0" id="layerID">
     <button onclick="functions.layerFinder(document.getElementById('layerID').value)">Get Layer Info</button><br>
     <h3>Output:</h3><br>
     <h4>Layer: <a id="layernameoutput"></a></h4><br>
@@ -184,8 +184,8 @@ Vue.component("settings-menu", {
     <p>Inspiration: Antimatter Dimensions by hevipelle, Infinite Layers by dan-simon</p>
     <p>Original Game (Omega Layers) created by VeproGames</p>
     <p>Powered by vue.js and break_eternity.min.js</p>
-    <p>` + mod.primaryName + mod.secondaryName + ` v` + mod.version +`</p>
-    ` + ((mod.primaryName + mod.secondaryName) !== "ωEngine" ? ("<p>Built with ωEngine v" + mod.engineVer + "</p>") : "") + `
+    <p>${mod.primaryName + mod.secondaryName} v${mod.primaryName + mod.secondaryName === "ωEngine" ? mod.engineVer : mod.version}</p>
+    <p>${mod.primaryName + mod.secondaryName !== "ωEngine" ? "Made with ωEngine v" + mod.engineVer : ""}</p>
 </div>
 </div>`
 })

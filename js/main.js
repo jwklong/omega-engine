@@ -6,7 +6,7 @@ let localTimer = 0;
 
 let keyMap = [];
 let tabMap = {};
-const textBoxFocused = false;
+let textBoxFocused = false;
 
 const app = new Vue({
     el: "#app",

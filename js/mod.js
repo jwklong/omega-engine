@@ -2,12 +2,13 @@ const mod = {
     primaryName: "ω",
     secondaryName: "Engine",
     version: "1.0.0",
-    engineVer: "1.0.0 P1", //DO NOT MODIFY
+    engineVer: "1.0.1", //DO NOT MODIFY
     debugMode: false,
     Infinities: [new Decimal(2).pow(1024), new Decimal("1.8e30008"), new Decimal("1.8e300000008"), new Decimal("ee38")],
     themes: [
         ["Dark", "css/themes/dark.css"],
         ["Dark Alt (by Jeehan2561)", "css/themes/darkalt.css"],
+        ["Modern", "css/themes/modern.css"],
         ["Light", "css/themes/light.css"],
         ["Neon", "css/themes/neon.css"],
         ["Godot Blue", "css/themes/darkblue.css"],
@@ -52,8 +53,10 @@ const mod = {
             [Utils.createRandomWord(2, new Random(Math.floor(Date.now()/3)).nextInt()),Utils.createRandomWord(3, new Random(Math.floor(Date.now()/4)).nextInt()),Utils.createRandomWord(4, new Random(Math.floor(Date.now()/5)).nextInt()),Utils.createRandomWord(5, new Random(Math.floor(Date.now()/6)).nextInt())]
         ]]
     ],
+    layerNamePlaceholder: "𐌒",
     fonts: [
         ["Monospace Typewriter", "css/fonts/typespace.css"],
+        ["Source Code Pro", "css/fonts/scp.css"],
         ["Comic Sans", "css/fonts/comic.css"],
         ["Arial", "css/fonts/arial.css"],
         ["Roboto", "css/fonts/roboto.css"],
@@ -66,11 +69,6 @@ const mod = {
         ["Save 2", "2"],
         ["Save 3", "3"],
         ["Save 4", "4"],
-    ],
-    extraNames: [
-        this.primaryName+this.secondaryName, //title name
-        this.primaryName+this.secondaryName, //save name
-        this.primaryName+this.secondaryName, //save .txt name
     ],
     debugClasses: []
 }

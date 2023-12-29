@@ -34,13 +34,16 @@ Vue.component("layer-colored-text", {
         },
         textGlow: function()
         {
-            const thickness = 0.025 * this.getLayerId();
+            var layer = this.getLayerId()
+            let thickness = 0.025 * layer;
+            if (thickness < 0) thickness = .4
+            layer = Math.abs(layer)
             const t = [Math.max(0, Math.min(0.7, thickness)), Math.max(0, Math.min(0.7, thickness / 2)),
                 Math.max(0, Math.min(0.7, Math.max(0, thickness - 0.3) / 4))];
-            const color = "currentcolor";
-            return "0px 0px " + t[0] + "em currentcolor"+
-                ",0px 0px " + t[1] + "em currentcolor"+
-                ",0px 0px " + t[2] + "em currentcolor";
+            var color = this.textColor
+            return "0px 0px " + t[0] + "em "+color+
+                ",0px 0px " + t[1] + "em "+color+
+                ",0px 0px " + t[2] + "em "+color;
         }
     },
     methods:

@@ -1,0 +1,8 @@
+@font-face{
+    font-family: scp-font;
+    src: url('../../fonts/scp.ttf');
+}
+
+:root{
+    --primary-font: scp-font
+}

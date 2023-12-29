@@ -1,0 +1,30 @@
+:root{
+    --background-body: #111;
+    --background-header: #222;
+    --color-base: #333;
+    --color-primary: #f90;
+    --color-hover: #383838;
+    --color-hover-strong: #444;
+    --color-contrast: #fff;
+    --color-success: #060;
+    --button-dark: #000;
+    --notification--error: #a20;
+    --notification--success: #3a0;
+    --notification--special: #a60;
+}
+
+.omega {
+    display: inline-block;
+    transform: scale(1.5,1);
+    margin-right: 0.2em;
+}
+
+button, .settings-panel {
+    border: none !important;
+    border-radius: 12px;
+    background-color: var(--color-base);
+}
+
+.guide-item .header {
+    border-bottom: none;
+}

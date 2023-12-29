@@ -44,16 +44,20 @@ class PrestigeLayer
             }
         }
     }
-    static getNameForLayer(layer)
+    static getNameForLayer(layer, negated = false)
     {
         let nLayer = layer;
         if(layer instanceof Decimal)
         {
             nLayer = layer.toNumber();
         }
-        if(layer instanceof Decimal && !layer.gte(0))
+        if(layer instanceof Decimal && !layer.gte(0) && !negated)
         {
-            return "-" + PrestigeLayer.getNameForLayer(new Decimal("-1").minus(nLayer))
+            return "-" + PrestigeLayer.getNameForLayer(new Decimal("-1").minus(nLayer), true)
+        }
+        if(layer instanceof Decimal && layer.round().neq(layer)) {
+            if (negated) layer = layer.add(1)
+            return "𐌒≠" + layer.toString()
         }
         if(layer instanceof Decimal && layer.gte(mod.Infinities[0]) && !layer.gte(mod.Infinities[1]))
         {
